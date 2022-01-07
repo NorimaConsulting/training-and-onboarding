@@ -1,0 +1,45 @@
+name: Lint Web App
+
+# Runs on pushes to the main branch and ALL pull requests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      # From https://pnpm.io/continuous-integration#github-actions
+      - name: PNPM Action Setup
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.20.3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # ESLint and Prettier must be in `package.json`
+      - name: Install PNPM and Node.js dependencies
+        run: pnpm install
+        working-directory: webapp/
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          eslint: true
+          prettier: true
+          eslint_dir: webapp
+          prettier_dir: webapp/src
+          eslint_extensions: js,jsx,ts,tsx
+          prettier_extensions: js,jsx,ts,tsx
+          eslint_command_prefix: 'pnpm'
+          prettier_command_prefix: 'pnpm'
