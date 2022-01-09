@@ -1,43 +1,24 @@
-import { useState } from 'react';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import logo from './logo.svg';
+import CreatedBy from './pages/CreatedBy';
+import ReactDefaultApp from './ReactDefaultApp';
 
+/**
+ * This is the main App component. If this starts getting too big, remember to refactor and nest things!
+ * @returns
+ */
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <Routes>
+        <Route path="/" element={<ReactDefaultApp />} />
+        {/* Leave this route, but don't necessarily display it once you have real features. */}
+        <Route path="/created_by" element={<CreatedBy />}>
+          {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
+          <Route path=":displayName" element={<CreatedBy />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
