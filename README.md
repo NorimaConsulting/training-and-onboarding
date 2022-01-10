@@ -3,6 +3,11 @@
 An introductory Project Repo for new hires using the React (JS/TS), Hasura, Postgres stack.  
 As such, it should contain lots of instructions, examples, and best practices.
 
+## Getting Started
+
+When using this as a tutorial project check out [The Machine Setup](docs/machine_setup_get_started_task.md) doc for ensuring your setup formats code correctly and you can get some practice with 
+
+Check out the [Documentation Folder](docs) for tips, tricks, and useful resources!
 ## Goals
 
 Learning without Tech Debt
