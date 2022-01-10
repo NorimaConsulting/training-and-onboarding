@@ -4,7 +4,10 @@ name: Lint Web App
 on:
   push:
     branches:
+      # The main branch
       - main
+      # The current cohort's main branch
+      - '*/main'
   pull_request:
 
 jobs:
