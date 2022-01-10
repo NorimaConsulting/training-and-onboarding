@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import Signe from '../linterChecks/Signe';
 import James from '../linterChecks/James';
 
 // New Devs TODO:
@@ -17,6 +18,7 @@ export default function CreatedBy() {
       <h4>These devs have verified their IDE is following the linter rules:</h4>
       {/* Add your component below! */}
       <James developer={{ name: 'James' }} />
+      <Signe developer={{ name: 'Signe' }} />
     </div>
   );
 }

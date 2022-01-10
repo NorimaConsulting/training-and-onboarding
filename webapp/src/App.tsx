@@ -18,6 +18,10 @@ function App() {
           {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
           <Route path=":displayName" element={<CreatedBy />} />
         </Route>
+        <Route path="/yellow-power-ranger" element={<CreatedBy />}>
+          {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
+          <Route path=":displayName" element={<CreatedBy />} />
+        </Route>
       </Routes>
     </div>
   );

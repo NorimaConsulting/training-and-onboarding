@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 export interface DevProps {
   developer?: {
     name: string;
@@ -15,8 +15,8 @@ export interface DevProps {
  */
 export default function DeveloperName(props: DevProps) {
   const aVeryLongArray = [
-    'This array should be broken up on to multiple lines',
-    'and should containt a trailing comma after this line',
+    'This array should be broken up onto multiple lines',
+    'and should contain a trailing comma after this line',
   ];
   aVeryLongArray.join(' ');
 
@@ -26,7 +26,12 @@ export default function DeveloperName(props: DevProps) {
   return (
     <div className="devname-wrapper">
       <label>Name:</label>
-      <span>{props.developer?.name}</span>
+      <span>
+        <Link to={`/yellow-power-ranger/${props.developer?.name}`}>
+          {' '}
+          {props.developer?.name}
+        </Link>
+      </span>
     </div>
   );
 }
