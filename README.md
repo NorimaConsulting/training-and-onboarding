@@ -1,6 +1,6 @@
-# training-and-onboarding
+# Training and On-Boarding Tutorial Project
 
-An introductory Project Repo for new hires.
+An introductory Project Repo for new hires using the React (JS/TS), Hasura, Postgres stack.  
 As such, it should contain lots of instructions, examples, and best practices.
 
 ## Goals
