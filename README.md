@@ -34,23 +34,30 @@ Setup
 ### CLI Tooling
 
 * Hasura CLI
-* pnpm for dependency management
+* `pnpm` for dependency management
 
 ### Necessary setup/libraries
 
-We'll need to set up `codegen` to get Typescript + GraphQL to play nicely together.
-Look here: https://www.graphql-code-generator.com/docs/getting-started and ask James F for a sample config.
+#### Environment Variables
 
-* We'll likely want to use the npm package `dotenv` to handle environment variables.
+We'll likely want to use the npm package `dotenv` to handle environment variables.
   * There are many best practices for keeping secrets. We'll do it somewhat properly with a `.env` file as opposed to committing the Hasura secret key.
-* Components! We'll use the [PrimeReact](https://www.primefaces.org/primereact/setup/) component library as much as possible as it has a lot of useful stuff
-* To talk to Hasura we'll use Tesseract's `react-graphql` and `react-graphql-ui` libraries  
-  _Note:_ Don't forget to to install the dependencies they need! (`pnpm` will also tell you if you don't have the required `peerDependencies` installed)
-  * https://github.com/tesseractcollective
-  * Check out their [Docs](https://github.com/tesseractcollective/react-graphql-docs) repo for exaples and setup information
-    * The main README is good, but also look at https://github.com/tesseractcollective/react-graphql-docs/blob/main/reactGraphqlConfig.md for the graphql code generator information!
-    * Check out their "Third Parties We Use" for links to other useful docs
-  * They use `tailwindcss` and we _can_ too but we don't need to.
+
+#### Components
+We'll use the [PrimeReact](https://www.primefaces.org/primereact/setup/) component library as much as possible as it has a lot of useful stuff
+
+#### Hasura + GraphQL + Typescript
+
+To talk to Hasura we'll use [Tesseract's](https://github.com/tesseractcollective) [`react-graphql`](https://github.com/tesseractcollective/react-graphql) and [`react-graphql-ui`](https://github.com/tesseractcollective/react-graphql-ui) libraries. You'll need to set those up as a team.
+
+_Note:_ Don't forget to to install the dependencies they need! (`pnpm` will also tell you if you don't have the required `peerDependencies` installed)
+
+We'll also want to use a lot of similar third-party libraries they use. Such as `jotai` and `react-hook-form`. Set them up as needed.
+
+* Check out their [Docs](https://github.com/tesseractcollective/react-graphql-docs) repo for exaples and setup information
+  * The main README is good, but also look at https://github.com/tesseractcollective/react-graphql-docs/blob/main/reactGraphqlConfig.md for the graphql code generator information!
+  * Check out their "Third Parties We Use" for links to other useful docs
+* They use `tailwindcss` and we _can_ too but we don't need to
 
 ## Concepts and Practices to Follow
 
