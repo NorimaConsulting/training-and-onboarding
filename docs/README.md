@@ -3,7 +3,12 @@
 v0.5.1-beta
 
 I'm moving all our onboarding resources into this folder as markdown files as a pseudo-github wiki (but when you clone the repo you get it too!)
+## Table of Contents
 
+* [Machine Setup](machine_setup_get_started_task.md) has some initial tasks and how to make sure you're ready to work on tasks! 🚦 Start here if you're doing the tutorial project
+* [Readings](readings.md) has articles with useful information
+* [Resources and References](resources_and_references.md) is a colletion of useful places to find info, the go-to sites when Googling
+* [Tips and Tools](tips_and_tools.md) has general information for tech pros
 ## Goals of this Folder of Docs
 
 As people are working remote more and touchpoints become further apart, along with my schedule becoming more crowded, it's difficult to sprinkle knowledge organically to new devs as we encounter issues day-to-day. In particular, I am on holiday when work begins in January.
