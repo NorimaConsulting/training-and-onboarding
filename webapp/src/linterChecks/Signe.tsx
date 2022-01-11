@@ -26,13 +26,11 @@ export default function DeveloperName(props: DevProps) {
   // The line below should give you a Typescript error, please fix it with optional chaining
   return (
     <div className="devname-wrapper">
-      <label>Name:</label>
       <span>
         <Link to={`/yellow-power-ranger/${props.developer?.name}`}>
           {' '}
-          {props.developer?.name}
+          <SpinButton name={props.developer?.name} />
         </Link>
-        <SpinButton name={props.developer?.name} />
       </span>
     </div>
   );
