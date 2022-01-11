@@ -1,4 +1,5 @@
 import React from 'react';
+import SpinButton from '../components/atoms/SpinButton/SpinButton';
 import { Link } from 'react-router-dom';
 export interface DevProps {
   developer?: {
@@ -31,6 +32,7 @@ export default function DeveloperName(props: DevProps) {
           {' '}
           {props.developer?.name}
         </Link>
+        <SpinButton name={props.developer?.name} />
       </span>
     </div>
   );
