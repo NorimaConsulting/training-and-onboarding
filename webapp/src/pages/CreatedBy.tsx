@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import James from '../linterChecks/James';
+import Arsh from '../linterChecks/Arsh';
 
 // New Devs TODO:
 // - Copy `webapp/SetupChecks/LintCheckTemplate.tsx` into `webapp/src/linterChecks/$yourName.tsx`
@@ -17,6 +18,7 @@ export default function CreatedBy() {
       <h4>These devs have verified their IDE is following the linter rules:</h4>
       {/* Add your component below! */}
       <James developer={{ name: 'James' }} />
+      <Arsh developer={{ name: 'Arsh' }} />
     </div>
   );
 }
