@@ -9,6 +9,22 @@ import ReactDefaultApp from './ReactDefaultApp';
  * @returns
  */
 
+/* TODO * Will delete these Sound Effects later since it was just for fun! */
+const SoundEffect = () => {
+  return (
+    <div>
+      <h2>POW!!</h2>
+    </div>
+  );
+};
+const SoundEffectTWO = () => {
+  return (
+    <div>
+      <h2>BAM!!</h2>
+    </div>
+  );
+};
+
 function App() {
   return (
     <div className="App">
@@ -17,11 +33,15 @@ function App() {
         {/* Leave this route, but don't necessarily display it once you have real features. */}
         <Route path="/created_by" element={<CreatedBy />}>
           {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
-          <Route path=":displayName" element={<CreatedBy />} />
+          <Route path=":displayName" element={<SoundEffectTWO />} />
+          <Route
+            path="/created_by/yellow-power-ranger/:displayName"
+            element={<SoundEffect />}
+          ></Route>
         </Route>
-        <Route path="/yellow-power-ranger" element={<CreatedBy />}>
+        {/* <Route path="/yellow-power-ranger" element={<CreatedBy />}>
           <Route path=":displayName" element={<CreatedBy />} />
-        </Route>
+        </Route> */}
       </Routes>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import SpinButton from '../components/atoms/SpinButton/SpinButton';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 export interface DevProps {
   developer?: {
     name: string;
@@ -27,11 +27,12 @@ export default function DeveloperName(props: DevProps) {
   return (
     <div className="devname-wrapper">
       <span>
-        <Link to={`/yellow-power-ranger/${props.developer?.name}`}>
+        <Link to={`/created_by/yellow-power-ranger/${props.developer?.name}`}>
           {' '}
           <SpinButton name={props.developer?.name} />
         </Link>
       </span>
+      <Outlet />
     </div>
   );
 }
