@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export interface DevProps {
   developer?: {
@@ -28,9 +28,10 @@ export default function Arsh(props: DevProps) {
     <div className="devname-wrapper">
       <label>Name:</label>
       <span>
-        <Link to={'/created_by/green'}>{props.developer?.name}</Link>
+        <Link to={`/created_by/${props.developer?.name}`}>
+          {props.developer?.name}
+        </Link>
       </span>
-      <Outlet />
     </div>
   );
 }
