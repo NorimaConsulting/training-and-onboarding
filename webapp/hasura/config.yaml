@@ -1,5 +1,5 @@
 version: 3
-endpoint: http://localhost:8080
+endpoint: https://winter-2022.hasura.app
 admin_secret: admin_secret
 api_paths:
   v1_query: v1/query
