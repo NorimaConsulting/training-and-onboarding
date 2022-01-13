@@ -9,7 +9,7 @@ import ReactDefaultApp from './ReactDefaultApp';
  * @returns
  */
 
-/* TODO * Will delete these Sound Effects later since it was just for fun! */
+/* TODO* is for future Signe to delete these "Sound Effects" after PR is approved since it was just for fun! */
 const SoundEffect = () => {
   return (
     <div>
@@ -39,9 +39,6 @@ function App() {
             element={<SoundEffect />}
           ></Route>
         </Route>
-        {/* <Route path="/yellow-power-ranger" element={<CreatedBy />}>
-          <Route path=":displayName" element={<CreatedBy />} />
-        </Route> */}
       </Routes>
     </div>
   );

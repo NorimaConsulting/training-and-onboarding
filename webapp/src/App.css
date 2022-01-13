@@ -4,6 +4,10 @@
 a {
   text-decoration: none;
 }
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
