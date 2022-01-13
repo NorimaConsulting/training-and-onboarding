@@ -19,7 +19,7 @@ function App() {
           {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
           <Route path=":displayName" element={<CreatedBy />} />
         </Route>
-        <Route path="/newbie/:displayName" element={<ButtonArsh />} />
+        <Route path="/newbie" element={<ButtonArsh />} />
       </Routes>
     </div>
   );

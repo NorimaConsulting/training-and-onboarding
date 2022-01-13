@@ -28,9 +28,7 @@ export default function Arsh(props: DevProps) {
     <div className="devname-wrapper">
       <label>Name:</label>
       <span>
-        <Link to={`/newbie/${props.developer?.name}`}>
-          {props.developer?.name}
-        </Link>
+        <Link to={'/newbie'}>{props.developer?.name}</Link>
       </span>
     </div>
   );
