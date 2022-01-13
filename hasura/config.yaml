@@ -1,5 +1,5 @@
 version: 3
-endpoint: https://winter-2022.hasura.app
+endpoint: endpoint
 admin_secret: admin_secret
 api_paths:
   v1_query: v1/query
@@ -16,5 +16,5 @@ actions:
   kind: synchronous
   handler_webhook_baseurl: http://localhost:3000
 codegen:
-  framework: ''
-  output_dir: ''
+  framework: ""
+  output_dir: ""
