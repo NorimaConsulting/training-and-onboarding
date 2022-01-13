@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CreatedBy from './pages/CreatedBy';
+import TieredMenuDemo from './components/organisms/NavBar/index';
 import ReactDefaultApp from './ReactDefaultApp';
 
 /**
@@ -11,6 +12,7 @@ import ReactDefaultApp from './ReactDefaultApp';
 function App() {
   return (
     <div className="App">
+      <TieredMenuDemo />
       <Routes>
         <Route path="/" element={<ReactDefaultApp />} />
         {/* Leave this route, but don't necessarily display it once you have real features. */}
