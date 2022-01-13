@@ -1,5 +1,0 @@
-- "!include public_recipe.yaml"
-- "!include public_review.yaml"
-- "!include public_tag_enum.yaml"
-- "!include public_user.yaml"
-- "!include public_user_tags.yaml"
