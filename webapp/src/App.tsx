@@ -19,16 +19,29 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <HomePage />
-      <Recipe />
-      <RecipeList />
-      <UserProfile />
+
       <Routes>
         <Route path="/" element={<ReactDefaultApp />} />
+        <Route path="home" element={<HomePage />} />
+        <Route path="recipe" element={<Recipe />} />
+        <Route path="recipe-list" element={<RecipeList />} />
+        <Route path="profile" element={<UserProfile />} />
+
         {/* Leave this route, but don't necessarily display it once you have real features. */}
         <Route path="/created_by" element={<CreatedBy />}>
           {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
           <Route path=":displayName" element={<CreatedBy />} />
+          <Route
+            path="*"
+            element={
+              <div>
+                <h2>
+                  Sorry the page you're looking for isn't at this address 😥
+                </h2>
+                <p>please double check the url!</p>
+              </div>
+            }
+          />
         </Route>
       </Routes>
     </div>

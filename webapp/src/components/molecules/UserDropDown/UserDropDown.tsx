@@ -5,13 +5,24 @@ import 'primeflex/primeflex.css';
 import React, { useRef } from 'react';
 import { TieredMenu } from 'primereact/tieredmenu';
 import { Button } from 'primereact/button';
+import { useNavigate } from 'react-router-dom';
 
 export default function UserDropDown() {
+  const navigate = useNavigate();
+
+  const navigateTo = (path: string) => {
+    navigate(path);
+  };
+
+  console.log(navigate, 'inside UserDropDown');
   const menu = useRef(null);
   const items = [
     {
       label: 'Profile',
       icon: 'pi pi-user',
+      command: () => {
+        navigateTo('/profile');
+      },
     },
     {
       label: 'Create Account',
