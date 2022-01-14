@@ -6,6 +6,7 @@ import './NavBar.scss';
 export default function NavBar() {
   return (
     <div className="nav-bar">
+      {/* /* TODO Change routes once components are created. For now they all go back "Home" */}
       <Link to="/" className="nav-bar__logo">
         <h2>GR RECIPES</h2>
       </Link>

@@ -2,17 +2,27 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CreatedBy from './pages/CreatedBy';
-import TieredMenuDemo from './components/organisms/NavBar/index';
+import NavBar from './components/organisms/NavBar/index';
 import ReactDefaultApp from './ReactDefaultApp';
+//* !testing *//
+import HomePage from './pages/HomePage';
+import Recipe from './pages/Recipe';
+import RecipeList from './pages/RecipeList';
+import UserProfile from './pages/UserProfile/UserProfile';
 
 /**
  * This is the main App component. If this starts getting too big, remember to refactor and nest things!
  * @returns
  */
+
 function App() {
   return (
     <div className="App">
-      <TieredMenuDemo />
+      <NavBar />
+      <HomePage />
+      <Recipe />
+      <RecipeList />
+      <UserProfile />
       <Routes>
         <Route path="/" element={<ReactDefaultApp />} />
         {/* Leave this route, but don't necessarily display it once you have real features. */}
