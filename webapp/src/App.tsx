@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CreatedBy from './pages/CreatedBy';
 import NavBar from './components/organisms/NavBar/index';
-import ReactDefaultApp from './ReactDefaultApp';
 import HomePage from './pages/HomePage';
 import Recipe from './pages/Recipe';
 import RecipeList from './pages/RecipeList';
@@ -19,14 +18,14 @@ import ButtonArsh from './components/atoms/ButtonArsh';
 const SoundEffect = () => {
   return (
     <div>
-      <h2>POW!!</h2>
+      <p>POW!!</p>
     </div>
   );
 };
 const SoundEffectTWO = () => {
   return (
     <div>
-      <h2>BAM!!</h2>
+      <p>BAM!!</p>
     </div>
   );
 };
@@ -58,9 +57,10 @@ function App() {
           path="*"
           element={
             <div>
-              <h2>
-                Sorry the page you're looking for isn't at this address 😥
-              </h2>
+              <p>
+                Sorry the page you&apos;re looking for isn&apos;t at this
+                address 😥
+              </p>
               <p>please double check the url!</p>
             </div>
           }
