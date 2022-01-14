@@ -7,7 +7,17 @@ import { TieredMenu } from 'primereact/tieredmenu';
 import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
 
-export default function UserDropDown() {
+export interface User {
+  user?: {
+    name: string;
+    email?: string;
+    avgRating?: string;
+    // ? avatar: not sure value this would be?
+    postedRecipes?: [];
+  };
+}
+
+export default function UserDropDown(props: User) {
   const navigate = useNavigate();
 
   const navigateTo = (path: string) => {
@@ -16,12 +26,13 @@ export default function UserDropDown() {
 
   console.log(navigate, 'inside UserDropDown');
   const menu = useRef(null);
+
   const items = [
     {
       label: 'Profile',
       icon: 'pi pi-user',
       command: () => {
-        navigateTo('/profile');
+        navigateTo(`/profile/${props.user?.name}`);
       },
     },
     {
@@ -44,7 +55,7 @@ export default function UserDropDown() {
       <TieredMenu model={items} popup ref={menu} id="overlay_tmenu" />
       <Button
         icon="pi pi-user"
-        onClick={(event) => menu.current.toggle(event)}
+        onClick={(event) => menu.current.toggle(event) && console.log(event)}
         aria-haspopup
         aria-controls="overlay_tmenu"
       />

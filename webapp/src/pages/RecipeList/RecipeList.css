@@ -2,3 +2,8 @@
   color: #e63946;
   background-color: #1d3557;
 }
+.card__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 1rem 2rem;
+}

@@ -25,7 +25,6 @@
   }
 
   &__search-bar {
-    // TODO add icon later  background: url("../../assets/icons/search.svg") 1rem no-repeat;
     background-color: #f1faee;
     border: 1px solid #a8dadc;
     padding: 0rem 1rem;
@@ -45,9 +44,7 @@
 
   &__link {
     color: #f1faee;
-    border-radius: 50%;
-    height: 2.55rem;
-    width: 2.55rem;
+
     margin-right: 1rem;
   }
 }

@@ -17,7 +17,7 @@ export interface DevProps {
 export default function DeveloperName(props: DevProps) {
   const aVeryLongArray = [
     'This array should be broken up on to multiple lines',
-    'and should containt a trailing comma after this line',
+    'and should contain a trailing comma after this line',
   ];
   aVeryLongArray.join(' ');
 

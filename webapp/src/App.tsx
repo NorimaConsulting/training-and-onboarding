@@ -25,24 +25,26 @@ function App() {
         <Route path="home" element={<HomePage />} />
         <Route path="recipe" element={<Recipe />} />
         <Route path="recipe-list" element={<RecipeList />} />
-        <Route path="profile" element={<UserProfile />} />
+        <Route path="profile" element={<UserProfile />}>
+          <Route path=":userName" element={<UserProfile />} />
+        </Route>
 
         {/* Leave this route, but don't necessarily display it once you have real features. */}
         <Route path="/created_by" element={<CreatedBy />}>
           {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
           <Route path=":displayName" element={<CreatedBy />} />
-          <Route
-            path="*"
-            element={
-              <div>
-                <h2>
-                  Sorry the page you're looking for isn't at this address 😥
-                </h2>
-                <p>please double check the url!</p>
-              </div>
-            }
-          />
         </Route>
+        <Route
+          path="*"
+          element={
+            <div>
+              <h2>
+                Sorry the page you're looking for isn't at this address 😥
+              </h2>
+              <p>please double check the url!</p>
+            </div>
+          }
+        />
       </Routes>
     </div>
   );
