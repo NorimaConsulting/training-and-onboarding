@@ -1,11 +1,9 @@
 import UserDropDown from '../../molecules/UserDropDown/UserDropDown';
-import { Link, Outlet, useParams } from 'react-router-dom';
-import { React } from 'react';
-import './NavBar.scss';
+import { Link, Outlet } from 'react-router-dom';
+import React from 'react';
+import './NavBar.css';
 
 export default function NavBar() {
-  const params = useParams();
-
   return (
     <div className="nav-bar">
       <Link to="/" className="nav-bar__logo">

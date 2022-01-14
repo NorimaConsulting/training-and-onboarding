@@ -1,18 +1,24 @@
 import React from 'react';
+import PlaceHolderImage from '../../../assets/images/french-toast.jpg';
+import { useNavigate } from 'react-router-dom';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 
-export default function AdvancedCard() {
-  const header = (
-    <img
-      alt="Card"
-      src="images/usercard.png"
-      onError={(e) =>
-        (e.target.src =
-          'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png')
-      }
-    />
-  );
+export interface routePath {
+  path?: {
+    pathName: string;
+  };
+}
+
+export default function AdvancedCard(props: routePath) {
+  const navigate = useNavigate();
+
+  const navigateTo = (path: string) => {
+    console.log('I am a path', path);
+    navigate(path);
+  };
+
+  const header = <img alt="Card" src={PlaceHolderImage} />;
   const footer = (
     <span>
       <Button label="Edit" icon="pi pi-check" />
@@ -24,9 +30,8 @@ export default function AdvancedCard() {
     </span>
   );
 
-  // TODO: add a const rating
   return (
-    <div>
+    <div onClick={() => navigateTo(`/${props.path?.pathName}`)}>
       <Card
         title="Recipe Title"
         subTitle="Prep Time: 30mins"

@@ -37,7 +37,7 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<ReactDefaultApp />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="home" element={<HomePage />} />
         <Route path="recipe" element={<Recipe />} />
         <Route path="recipe-list" element={<RecipeList />} />

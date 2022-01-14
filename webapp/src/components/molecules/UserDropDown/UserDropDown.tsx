@@ -25,6 +25,7 @@ export default function UserDropDown(props: User) {
   };
 
   console.log(navigate, 'inside UserDropDown');
+
   const menu = useRef(null);
 
   const items = [
@@ -44,7 +45,6 @@ export default function UserDropDown(props: User) {
       separator: true,
     },
     {
-      /* TODO: Once everything is set up we can hold "Sign out" label in state so it changes to Sign in */
       label: 'Sign out',
       icon: 'pi pi-fw pi-power-off',
     },
@@ -55,7 +55,8 @@ export default function UserDropDown(props: User) {
       <TieredMenu model={items} popup ref={menu} id="overlay_tmenu" />
       <Button
         icon="pi pi-user"
-        onClick={(event) => menu.current.toggle(event) && console.log(event)}
+        // !Looked into using null with TS and couldn't figure out a way to resolve this issue with menu,current/useRef(null)
+        onClick={(event) => menu.current.toggle(event)}
         aria-haspopup
         aria-controls="overlay_tmenu"
       />
