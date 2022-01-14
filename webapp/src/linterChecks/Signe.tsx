@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import SpinButton from '../components/atoms/SpinButton/SpinButton';
+import { Link, Outlet } from 'react-router-dom';
 export interface DevProps {
   developer?: {
     name: string;
@@ -16,20 +16,23 @@ export interface DevProps {
  */
 export default function DeveloperName(props: DevProps) {
   const aVeryLongArray = [
-    'This array should be broken up on to multiple lines',
+    'This array should be broken up onto multiple lines',
     'and should contain a trailing comma after this line',
   ];
   aVeryLongArray.join(' ');
 
+  // After confirming your styles are fixed you can also feel free to style your name, add more info, or make this fancier if you'd like!
+
   // The line below should give you a Typescript error, please fix it with optional chaining
   return (
     <div className="devname-wrapper">
-      <label>Name: </label>
       <span>
-        <Link to={`/created_by/${props.developer?.name}`}>
-          {props.developer?.name}
+        <Link to={`/created_by/yellow-power-ranger/${props.developer?.name}`}>
+          {' '}
+          <SpinButton name={props.developer?.name} />
         </Link>
       </span>
+      <Outlet />
     </div>
   );
 }
