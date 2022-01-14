@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CreatedBy from './pages/CreatedBy';
 import ReactDefaultApp from './ReactDefaultApp';
+import ButtonArsh from './components/atoms/ButtonArsh';
 
 /**
  * This is the main App component. If this starts getting too big, remember to refactor and nest things!
@@ -39,6 +40,7 @@ function App() {
             element={<SoundEffect />}
           ></Route>
         </Route>
+        <Route path="/newbie" element={<ButtonArsh />} />
       </Routes>
     </div>
   );
