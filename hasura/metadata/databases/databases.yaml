@@ -1,8 +1,0 @@
-- name: DigitalOcean Postgres DB for Hasura
-  kind: postgres
-  configuration:
-    connection_info:
-      database_url: postgresql://doadmin:d5Mfr2ZrsTRI3WIe@winter-2022-training-hasura-pgdb-do-user-7031542-0.b.db.ondigitalocean.com:25060/defaultdb?sslmode=require
-      isolation_level: read-committed
-      use_prepared_statements: false
-  tables: "!include DigitalOcean Postgres DB for Hasura/tables/tables.yaml"
