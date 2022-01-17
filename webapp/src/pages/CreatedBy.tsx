@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Signe from '../linterChecks/Signe';
 import James from '../linterChecks/James';
+import Akshay from '../linterChecks/Akshay';
 import Arsh from '../linterChecks/Arsh';
 
 // New Devs TODO:
@@ -19,6 +20,7 @@ export default function CreatedBy() {
       <h4>These devs have verified their IDE is following the linter rules:</h4>
       {/* Add your component below! */}
       <James developer={{ name: 'James' }} />
+      <Akshay developer={{ name: 'Akshay' }} />
       <Signe developer={{ name: 'Signe' }} />
       <Arsh developer={{ name: 'Arsh' }} />
     </div>
