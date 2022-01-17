@@ -14,7 +14,6 @@ export default function AdvancedCard(props: routePath) {
   const navigate = useNavigate();
 
   const navigateTo = (path: string) => {
-    console.log('I am a path', path);
     navigate(path);
   };
 
