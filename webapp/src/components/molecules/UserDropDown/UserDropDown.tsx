@@ -26,7 +26,7 @@ export default function UserDropDown(props: User) {
     navigate(path);
   };
 
-  const menu = useRef<any>(null);
+  const menu = useRef<TieredMenu>(null);
 
   const items = [
     {
@@ -55,8 +55,7 @@ export default function UserDropDown(props: User) {
       <TieredMenu model={items} popup ref={menu} id="overlay_tmenu" />
       <Button
         icon="pi pi-user"
-        // !Looked into using null with TS and couldn't figure out a way to resolve this issue with menu,current/useRef(null)
-        onClick={(event) => menu?.current.toggle(event)}
+        onClick={(event) => menu.current?.toggle(event)}
         aria-haspopup
         aria-controls="overlay_tmenu"
       />
