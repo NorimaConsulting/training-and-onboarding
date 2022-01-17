@@ -40,11 +40,8 @@ function App() {
             element={<SoundEffect />}
           ></Route>
         </Route>
-<<<<<<< HEAD
         <Route path="/blackRanger" element={<CreatedBy />} />
-=======
         <Route path="/newbie" element={<ButtonArsh />} />
->>>>>>> 00f615f50feb8cdd00c1037c675947bca5b1ae9c
       </Routes>
     </div>
   );
