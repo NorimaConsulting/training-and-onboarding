@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CreatedBy from './pages/CreatedBy';
-import NavBar from './components/organisms/NavBar/index';
+import NavBar from './components/organisms/NavBar';
 import HomePage from './pages/HomePage';
 import Recipe from './pages/Recipe';
 import RecipeList from './pages/RecipeList';
@@ -61,7 +61,7 @@ function App() {
                 Sorry the page you&apos;re looking for isn&apos;t at this
                 address 😥
               </p>
-              <p>please double check the url!</p>
+              <p>please double-check the url!</p>
             </div>
           }
         />

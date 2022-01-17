@@ -10,13 +10,8 @@ export interface routePath {
   };
 }
 
-export default function AdvancedCard(props: routePath) {
+export default function ClickableImageCard(props: routePath) {
   const navigate = useNavigate();
-
-  const navigateTo = (path: string) => {
-    console.log('I am a path', path);
-    navigate(path);
-  };
 
   const header = <img alt="Card" src={PlaceHolderImage} />;
   const footer = (
@@ -31,7 +26,7 @@ export default function AdvancedCard(props: routePath) {
   );
 
   return (
-    <div onClick={() => navigateTo(`/${props.path?.pathName}`)}>
+    <div onClick={() => navigate(`/${props.path?.pathName}`)}>
       <Card
         title="Recipe Title"
         subTitle="Prep Time: 30mins"
@@ -39,6 +34,7 @@ export default function AdvancedCard(props: routePath) {
         footer={footer}
         header={header}
       >
+        {/* TODO  replace place holder Lorem ipsum text with  recipe description */}
         <p className="p-m-0" style={{ lineHeight: '1.5' }}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
           sed consequuntur error repudiandae numquam deserunt quisquam repellat

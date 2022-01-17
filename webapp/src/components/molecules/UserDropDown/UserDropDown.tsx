@@ -7,12 +7,14 @@ import { TieredMenu } from 'primereact/tieredmenu';
 import { Button } from 'primereact/button';
 import { useNavigate } from 'react-router-dom';
 
+// * might have to adjust the User interface later on
+
 export interface User {
   user?: {
     name: string;
     email?: string;
     avgRating?: string;
-    // ? avatar: not sure value this would be?
+    avatar?: string;
     postedRecipes?: [];
   };
 }
@@ -24,9 +26,7 @@ export default function UserDropDown(props: User) {
     navigate(path);
   };
 
-  console.log(navigate, 'inside UserDropDown');
-
-  const menu = useRef(null);
+  const menu = useRef<any>(null);
 
   const items = [
     {
@@ -45,7 +45,7 @@ export default function UserDropDown(props: User) {
       separator: true,
     },
     {
-      label: 'Sign out',
+      label: 'Sign Out',
       icon: 'pi pi-fw pi-power-off',
     },
   ];
@@ -56,7 +56,7 @@ export default function UserDropDown(props: User) {
       <Button
         icon="pi pi-user"
         // !Looked into using null with TS and couldn't figure out a way to resolve this issue with menu,current/useRef(null)
-        onClick={(event) => menu.current.toggle(event)}
+        onClick={(event) => menu?.current.toggle(event)}
         aria-haspopup
         aria-controls="overlay_tmenu"
       />
