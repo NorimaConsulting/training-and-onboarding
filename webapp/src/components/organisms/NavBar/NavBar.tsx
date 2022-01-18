@@ -1,13 +1,13 @@
-import UserDropDown from '../../molecules/UserDropDown/UserDropDown';
-import { Link, Outlet } from 'react-router-dom';
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import UserDropDown from '../../molecules/UserDropDown/UserDropDown';
 import './NavBar.css';
 
 export default function NavBar() {
   return (
     <div className="nav-bar">
       <Link to="/" className="nav-bar__logo">
-        <h2 className="nav-bar__text">GR RECIPES</h2>
+        <h2 className="nav-bar__text">Gordo's Great Recipes</h2>
       </Link>
       <Link to="/recipe-list" className="nav-bar__link">
         <h2>Recipes</h2>
