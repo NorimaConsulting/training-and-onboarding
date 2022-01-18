@@ -65,6 +65,7 @@ function App() {
             </div>
           }
         />
+        <Route path="/blackRanger" element={<CreatedBy />} />
         <Route path="/newbie" element={<ButtonArsh />} />
       </Routes>
     </div>
