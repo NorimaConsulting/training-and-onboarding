@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import CreatedBy from './pages/CreatedBy';
+import ButtonArsh from './components/atoms/ButtonArsh';
 import NavBar from './components/organisms/NavBar';
+import CreatedBy from './pages/CreatedBy';
 import HomePage from './pages/HomePage';
 import Recipe from './pages/Recipe';
 import RecipeList from './pages/RecipeList';
 import UserProfile from './pages/UserProfile/UserProfile';
-import ButtonArsh from './components/atoms/ButtonArsh';
 
 /**
  * This is the main App component. If this starts getting too big, remember to refactor and nest things!
@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-
+      <h1>James!</h1>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="home" element={<HomePage />} />
