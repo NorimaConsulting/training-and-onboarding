@@ -1,0 +1,9 @@
+- name: DigitalOcean Postgres DB for Hasura
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url:
+        from_env: HASURA_POSTGRES_URL
+      isolation_level: read-committed
+      use_prepared_statements: false
+  tables: "!include DigitalOcean Postgres DB for Hasura/tables/tables.yaml"
