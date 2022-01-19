@@ -13,7 +13,7 @@ export interface User {
     name: string;
     email?: string;
     avgRating?: string;
-    // ? avatar: not sure value this would be?
+    avatar?: string;
     postedRecipes?: [];
   };
 }
@@ -27,7 +27,7 @@ export default function UserDropDown(props: User) {
 
   console.log(navigate, 'inside UserDropDown');
 
-  const menu = useRef<any>(null);
+  const menu = useRef<TieredMenu>(null);
 
   const items = [
     {

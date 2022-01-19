@@ -7,6 +7,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.9.0
   '@typescript-eslint/parser': ^5.9.0
   '@vitejs/plugin-react': ^1.0.7
+  dotenv: ^14.1.0
   eslint: ^7.12.1
   eslint-config-prettier: ^8.3.0
   eslint-config-standard: ^16.0.3
@@ -26,7 +27,11 @@ specifiers:
   vite: ^2.7.2
 
 dependencies:
+<<<<<<< HEAD
   '@auth0/auth0-react': 1.9.0_react-dom@17.0.2+react@17.0.2
+=======
+  dotenv: 14.2.0
+>>>>>>> e35bce231c33541d230e877346d845cc6af78436
   primeflex: 2.0.0
   primeicons: 5.0.0
   primereact: 7.1.0_bf98fc37872d82387c44623d5506efd5
@@ -870,6 +875,14 @@ packages:
       csstype: 3.0.10
     dev: false
 
+<<<<<<< HEAD
+=======
+  /dotenv/14.2.0:
+    resolution: {integrity: sha512-05POuPJyPpO6jqzTNweQFfAyMSD4qa4lvsMOWyTRTdpHKy6nnnN+IYWaXF+lHivhBH/ufDKlR4IWCAN3oPnHuw==}
+    engines: {node: '>=12'}
+    dev: false
+
+>>>>>>> e35bce231c33541d230e877346d845cc6af78436
   /electron-to-chromium/1.4.37:
     resolution: {integrity: sha512-XIvFB1omSAxYgHYX48sC+HR8i/p7lx7R+0cX9faElg1g++h9IilCrJ12+bQuY+d96Wp7zkBiJwMOv+AhLtLrTg==}
     dev: true

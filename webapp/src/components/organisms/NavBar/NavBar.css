@@ -48,6 +48,9 @@
 
   margin-right: 1rem;
 }
+.nav-bar__text {
+  text-transform: uppercase;
+}
 
 .p-component {
   background: rgb(168, 218, 220);
