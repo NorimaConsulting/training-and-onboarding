@@ -1,4 +1,5 @@
 import React from 'react';
+import './ClickableImageCard.scss';
 import PlaceHolderImage from '../../../assets/images/french-toast.jpg';
 import { useNavigate } from 'react-router-dom';
 import { Card } from 'primereact/card';
@@ -14,6 +15,7 @@ export default function ClickableImageCard(props: routePath) {
   const navigate = useNavigate();
 
   const header = <img alt="Card" src={PlaceHolderImage} />;
+  //* Buttons should only be shown when user is logged in
   const footer = (
     <span>
       <Button label="Edit" icon="pi pi-check" />
