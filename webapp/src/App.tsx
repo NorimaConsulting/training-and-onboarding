@@ -2,7 +2,11 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import CreatedBy from './pages/CreatedBy';
-import ReactDefaultApp from './ReactDefaultApp';
+import NavBar from './components/organisms/NavBar';
+import HomePage from './pages/HomePage';
+import Recipe from './pages/Recipe';
+import RecipeList from './pages/RecipeList';
+import UserProfile from './pages/UserProfile/UserProfile';
 import ButtonArsh from './components/atoms/ButtonArsh';
 
 /**
@@ -14,14 +18,14 @@ import ButtonArsh from './components/atoms/ButtonArsh';
 const SoundEffect = () => {
   return (
     <div>
-      <h2>POW!!</h2>
+      <p>POW!!</p>
     </div>
   );
 };
 const SoundEffectTWO = () => {
   return (
     <div>
-      <h2>BAM!!</h2>
+      <p>BAM!!</p>
     </div>
   );
 };
@@ -29,8 +33,17 @@ const SoundEffectTWO = () => {
 function App() {
   return (
     <div className="App">
+      <NavBar />
+
       <Routes>
-        <Route path="/" element={<ReactDefaultApp />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="home" element={<HomePage />} />
+        <Route path="recipe" element={<Recipe />} />
+        <Route path="recipe-list" element={<RecipeList />} />
+        <Route path="profile" element={<UserProfile />}>
+          <Route path=":userName" element={<UserProfile />} />
+        </Route>
+
         {/* Leave this route, but don't necessarily display it once you have real features. */}
         <Route path="/created_by" element={<CreatedBy />}>
           {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
@@ -40,6 +53,18 @@ function App() {
             element={<SoundEffect />}
           ></Route>
         </Route>
+        <Route
+          path="*"
+          element={
+            <div>
+              <p>
+                Sorry the page you&apos;re looking for isn&apos;t at this
+                address 😥
+              </p>
+              <p>please double-check the url!</p>
+            </div>
+          }
+        />
         <Route path="/blackRanger" element={<CreatedBy />} />
         <Route path="/newbie" element={<ButtonArsh />} />
       </Routes>

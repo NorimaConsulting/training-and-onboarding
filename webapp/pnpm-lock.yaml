@@ -15,17 +15,25 @@ specifiers:
   eslint-plugin-promise: ^5.0.0
   eslint-plugin-react: ^7.28.0
   prettier: ^2.5.1
+  primeflex: 2.0.0
+  primeicons: ^5.0.0
+  primereact: ^7.1.0
   react: ^17.0.2
   react-dom: ^17.0.2
   react-router-dom: '6'
+  react-transition-group: ^4.4.2
   typescript: ^4.4.4
   vite: ^2.7.2
 
 dependencies:
   dotenv: 14.2.0
+  primeflex: 2.0.0
+  primeicons: 5.0.0
+  primereact: 7.1.0_bf98fc37872d82387c44623d5506efd5
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2
+  react-transition-group: 4.4.2_react-dom@17.0.2+react@17.0.2
 
 devDependencies:
   '@types/react': 17.0.38
@@ -759,7 +767,6 @@ packages:
 
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
-    dev: true
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -816,6 +823,13 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dom-helpers/5.2.1:
+    resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
+    dependencies:
+      '@babel/runtime': 7.16.7
+      csstype: 3.0.10
+    dev: false
 
   /dotenv/14.2.0:
     resolution: {integrity: sha512-05POuPJyPpO6jqzTNweQFfAyMSD4qa4lvsMOWyTRTdpHKy6nnnN+IYWaXF+lHivhBH/ufDKlR4IWCAN3oPnHuw==}
@@ -1919,6 +1933,31 @@ packages:
     hasBin: true
     dev: true
 
+  /primeflex/2.0.0:
+    resolution: {integrity: sha512-t6AG3iRI1rh04uI+9nC4JSlbKfA8PnpRDFtjyqi3rDSLRgdfOuhIiunJbjVQ4alnnCfuQAAbVyde1AKN9QxT/w==}
+    dev: false
+
+  /primeicons/5.0.0:
+    resolution: {integrity: sha512-heygWF0X5HFI1otlZE62pp6ye7sZ8om78J9au2BRkg8O7Y8AHTZ9qKMRzchZUHLe8zUAvdi6hZzzm9XxgwIExw==}
+    dev: false
+
+  /primereact/7.1.0_bf98fc37872d82387c44623d5506efd5:
+    resolution: {integrity: sha512-0j9BHtHLQhKvl0TtORsyucNpR5FwWMbUd7qfTaz0FY2A0uJTLDxymPmRaosiwv6D7NO+xG1+hVJ/CHnWIE7VRg==}
+    peerDependencies:
+      primeicons: ^5.0.0
+      react: ^17.0.1
+      react-dom: ^17.0.1
+      react-transition-group: ^4.4.1
+    peerDependenciesMeta:
+      react-transition-group:
+        optional: true
+    dependencies:
+      primeicons: 5.0.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-transition-group: 4.4.2_react-dom@17.0.2+react@17.0.2
+    dev: false
+
   /progress/2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
     engines: {node: '>=0.4.0'}
@@ -1930,7 +1969,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
 
   /punycode/2.1.1:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
@@ -1954,7 +1992,6 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: true
 
   /react-refresh/0.11.0:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
@@ -1980,6 +2017,20 @@ packages:
     dependencies:
       history: 5.2.0
       react: 17.0.2
+    dev: false
+
+  /react-transition-group/4.4.2_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==}
+    peerDependencies:
+      react: '>=16.6.0'
+      react-dom: '>=16.6.0'
+    dependencies:
+      '@babel/runtime': 7.16.7
+      dom-helpers: 5.2.1
+      loose-envify: 1.4.0
+      prop-types: 15.8.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /react/17.0.2:
