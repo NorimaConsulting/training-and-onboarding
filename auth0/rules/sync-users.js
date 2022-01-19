@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path:"../../.env"});
 
 function syncUsers(user, context, callback) {
     const username = user.name;
@@ -14,17 +14,16 @@ function syncUsers(user, context, callback) {
                   }
           }`;
   
-    const variables = { "username": username, "email": email };
+    const query_variables = { "username": username, "email": email };
   
     request.post({
         url: url,
         headers: {'content-type' : 'application/json', 'x-hasura-admin-secret': admin_secret},
         body: JSON.stringify({
           query: query,
-          variables: variables
+          variables: query_variables
         })
     }, function(error, response, body){
-         console.log(body);
          callback(null, user, context);
     });
   }
