@@ -69,7 +69,7 @@ export default function HomePage() {
         <div className="homepage__welcome-box">
           <h1 className="homepage__text">Welcome to GR Recipes.</h1>
           <p className="homepage__text">
-            Where you&apos;ll find crème de la crème of people and recipe
+            Where you&apos;ll find crème de la crème of people and recipes
           </p>
         </div>
       </div>
