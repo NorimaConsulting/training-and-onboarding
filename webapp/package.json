@@ -7,17 +7,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@auth0/auth0-react": "^1.9.0",
     "primeflex": "2.0.0",
     "primeicons": "^5.0.0",
     "primereact": "^7.1.0",
-=======
-    "primeflex": "2.0.0",
-    "primeicons": "^5.0.0",
-    "primereact": "^7.1.0",
     "dotenv": "^14.1.0",
->>>>>>> e35bce231c33541d230e877346d845cc6af78436
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "6",
