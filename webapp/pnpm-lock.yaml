@@ -32,6 +32,9 @@ dependencies:
   primeicons: 5.0.0
   primereact: 7.1.0_bf98fc37872d82387c44623d5506efd5
   dotenv: 14.2.0
+  primeflex: 2.0.0
+  primeicons: 5.0.0
+  primereact: 7.1.0_bf98fc37872d82387c44623d5506efd5
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2

@@ -15,7 +15,6 @@ export default function ClickableImageCard(props: routePath) {
   const navigate = useNavigate();
 
   const header = <img alt="Card" src={PlaceHolderImage} />;
-  //* Buttons should only be shown when user is logged in
   const footer = (
     <span>
       <Button label="Edit" icon="pi pi-check" />

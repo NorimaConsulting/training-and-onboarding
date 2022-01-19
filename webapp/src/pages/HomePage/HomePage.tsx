@@ -19,40 +19,38 @@ const placeholderREcipes: {
   {
     title: 'Banana Bread',
     displayName: 'Gorden R',
-    rating: 5,
+    rating: 500,
     time: '30 mins',
   },
   {
     title: 'Cake',
     displayName: 'Martha S',
-    rating: 4,
+    rating: 4538,
     time: '45 mins',
   },
   {
     title: 'Samosa',
     displayName: 'Expert_Chef',
-    rating: 5,
+    rating: 546856,
     time: '30 mins',
   },
   {
     title: 'Krumkake',
     displayName: 'Betty B',
-    rating: 5,
+    rating: 7861,
     time: '100 mins',
   },
   {
     title: 'Ice Cream',
     displayName: 'Wolfgang Puckk',
-    rating: 3,
+    rating: 35400000,
     time: '2 mins',
   },
 ];
-console.log(placeholderREcipes);
 
 // below creates an array to only show first 3 objects:
 const suggestedNum = 3;
 const firstOfRecipeLIst = placeholderREcipes.slice(0, suggestedNum);
-console.log(firstOfRecipeLIst);
 
 export default function HomePage() {
   const [rating, setRating] = useState(0);
