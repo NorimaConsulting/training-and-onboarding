@@ -1,0 +1,9 @@
+.recipe-list {
+  color: #e63946;
+  background-color: #a8dadc;
+}
+.card__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 1rem 2rem;
+}
