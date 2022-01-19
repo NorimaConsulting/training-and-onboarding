@@ -9,10 +9,10 @@ export default function NavBar() {
       <Link to="/" className="nav-bar__logo">
         <h2 className="nav-bar__text">GR RECIPES</h2>
       </Link>
-      <Link to="/recipe-list" className="nav-bar__link">
+      <Link to="/home" className="nav-bar__link">
         <h2>Home</h2>
       </Link>
-      <Link to="/home" className="nav-bar__link">
+      <Link to="/recipe-list" className="nav-bar__link">
         <h2>Recipes</h2>
       </Link>
       {/* TODO: Once a Create Recipe Component is made, change this link/path to that Component */}
