@@ -12,7 +12,6 @@ module.exports = {
   ],
   // TODO: Figure out why it works when commented out
   // documents: ['src/**/*.graphql'],
-  overwrite: true,
   generates: {
     'src/resources/config/generated/resourceApi/index.ts': {
       plugins: [

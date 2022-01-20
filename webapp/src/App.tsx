@@ -82,6 +82,8 @@ function App() {
           />
           <Route path="/blackRanger" element={<CreatedBy />} />
           <Route path="/newbie" element={<ButtonArsh />} />
+          {/* Remove this route when not needed for testing query purposes */}
+          <Route path="/testQuery" element={<UsersQuery />} />
         </Routes>
       </Provider>
     </div>

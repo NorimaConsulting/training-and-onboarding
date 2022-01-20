@@ -4,6 +4,7 @@ const getUsersQuery = `
   query {
     user {
       name
+      id
     }
   }
 `;

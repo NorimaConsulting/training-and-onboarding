@@ -1,4 +1,3 @@
-overwrite: true
 schema: 'https://winter-2022.hasura.app/v1/graphql'
 documents: 'src/**/*.graphql'
 generates:
