@@ -1,10 +1,26 @@
 import { Card } from 'primereact/card';
 import foodPlaceHolder from '../../assets/images/pasta.jpg';
-
-//* testing out a star rating library:
-import React, { useState } from 'react';
-import { Rating } from 'react-simple-star-rating';
+import RatingStars from '../../components/molecules/RatingStars';
+import React from 'react';
 import './HomePage.scss';
+/// TODO uncomment this out once DB is SetUp //
+// import { useQuery } from 'urql';
+
+// const getRecipes = `
+// recipe {
+//   created_at
+//   user {
+//     recipe {
+//       prep_time_minutes
+//       title
+//     }
+//     name
+//   }
+//   reviews {
+//     rating
+//   }
+// }
+// `;
 
 // TODO recipe name, prep time, star rating, author/display name
 // * Not sure if this is useful but option an to get the avg rating number on the front end could be using:
@@ -19,31 +35,31 @@ const placeholderREcipes: {
   {
     title: 'Banana Bread',
     displayName: 'Gorden R',
-    rating: 500,
+    rating: 3.5,
     time: '30 mins',
   },
   {
     title: 'Cake',
     displayName: 'Martha S',
-    rating: 4538,
+    rating: 2,
     time: '45 mins',
   },
   {
     title: 'Samosa',
     displayName: 'Expert_Chef',
-    rating: 546856,
+    rating: 5,
     time: '30 mins',
   },
   {
     title: 'Krumkake',
     displayName: 'Betty B',
-    rating: 7861,
+    rating: 4.5,
     time: '100 mins',
   },
   {
     title: 'Ice Cream',
     displayName: 'Wolfgang Puckk',
-    rating: 35400000,
+    rating: 5,
     time: '2 mins',
   },
 ];
@@ -53,13 +69,24 @@ const suggestedNum = 3;
 const firstOfRecipeLIst = placeholderREcipes.slice(0, suggestedNum);
 
 export default function HomePage() {
-  const [rating, setRating] = useState(0);
+  //   const [result] = useQuery({
+  //     query: getRecipes,
+  //   });
 
-  const handleRating = (rate: number) => {
-    setRating(rate);
-    // * still need to figure out how to rewrite this function so it individually shows each recipe rating.
-    // * this is the rating library I used: https://www.npmjs.com/package/react-simple-star-rating
-  };
+  //   const { data, fetching, error } = result;
+
+  //   if (fetching) return <p>Loading...</p>;
+  //   if (error) return <p>Oh no... {error.message}</p>;
+
+  //   console.log(data.recipe)
+  //   console.log('username', data.recipe[0].user.name)
+
+  //   // Get 3 most recent recipes:
+  //   const mostRecent = 3;
+  // const mostRecentRecipeList = data.recipe.slice(0, mostRecent);
+  // console.log(mostRecentRecipeList)
+  // console.log('username', mostRecentRecipeList[0].user.name)
+  // * replace  line 103 firstOfREcipeLIst with mostRecentRecipeList and update objects
 
   return (
     <>
@@ -74,7 +101,7 @@ export default function HomePage() {
       <h2 className="homepage__header homepage__header--left "> New Recipes</h2>
       <div className="suggested-recipe">
         {firstOfRecipeLIst.map((recipe: any) => {
-          // *a better unique "key" prop for <Card/> might be the user id?
+          // * a better unique "key" prop for <Card/> might be the user id?
           return (
             // TODO: add function/props so when user clicks on recipe card a new tab opens to that single recipe.
             <Card
@@ -95,10 +122,7 @@ export default function HomePage() {
 
               <div className="suggested-recipe__rating">
                 <p>{recipe.rating}</p>
-                <Rating
-                  onClick={handleRating}
-                  ratingValue={rating} /* Available Props */
-                />
+                <RatingStars rating={recipe.rating} />
               </div>
             </Card>
           );
