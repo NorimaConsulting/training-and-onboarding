@@ -4,70 +4,28 @@ import RatingStars from '../../components/molecules/RatingStars';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.scss';
-/// TODO uncomment this out once DB is SetUp //
 import { useQuery } from 'urql';
 
+// Query to get all recipes
 const getRecipes = `{
-recipe {
-  created_at
-  user {
-    recipe {
-      prep_time_minutes
-      title
+  recipe {
+    created_at
+    user {
+      recipe {
+        prep_time_minutes
+        title
+        id
+      }
+      name
     }
-    name
-  }
-  reviews {
-    rating
-  }
-}}
+    reviews {
+      rating
+    }
+  }}
 `;
 
-// TODO recipe name, prep time, star rating, author/display name
 // * Not sure if this is useful but option an to get the avg rating number on the front end could be using:
 // ? const avgRating = arrayOfNumbers => arrayOfNumbers.reduce((a,b) => a + b, 0) / arrayOfNumbers.length
-
-const placeholderREcipes: {
-  title: string;
-  displayName: string;
-  time?: number | string;
-  rating?: number | string;
-}[] = [
-  {
-    title: 'Banana Bread',
-    displayName: 'Gorden R',
-    rating: 3.5,
-    time: '30 mins',
-  },
-  {
-    title: 'Cake',
-    displayName: 'Martha S',
-    rating: 2,
-    time: '45 mins',
-  },
-  {
-    title: 'Samosa',
-    displayName: 'Expert_Chef',
-    rating: 5,
-    time: '30 mins',
-  },
-  {
-    title: 'Krumkake',
-    displayName: 'Betty B',
-    rating: 4.5,
-    time: '100 mins',
-  },
-  {
-    title: 'Ice Cream',
-    displayName: 'Wolfgang Puckk',
-    rating: 5,
-    time: '2 mins',
-  },
-];
-
-// below creates an array to only show first 3 objects:
-const suggestedNum = 3;
-const firstOfRecipeLIst = placeholderREcipes.slice(0, suggestedNum);
 
 export default function HomePage() {
   const [result] = useQuery({
@@ -85,15 +43,9 @@ export default function HomePage() {
       </p>
     );
 
-  console.log(data);
-  console.log('username', data.recipe[0].user.name);
-
   // Get 3 most recent recipes:
   const mostRecent = 3;
   const mostRecentRecipeList = data.recipe.slice(0, mostRecent);
-  console.log(mostRecentRecipeList);
-  console.log('username', mostRecentRecipeList[0].user.name);
-  // * replace  line 103 firstOfREcipeLIst with mostRecentRecipeList and update objects
 
   return (
     <>
@@ -107,33 +59,35 @@ export default function HomePage() {
       </div>
       <h2 className="homepage__header homepage__header--left "> New Recipes</h2>
       <div className="suggested-recipe">
-        {firstOfRecipeLIst.map((recipe: any) => {
-          // * a better unique "key" prop for <Card/> might be the user id?
+        {mostRecentRecipeList.map((recipe: any) => {
           return (
-            // TODO: add function/props so when user clicks on recipe card a new tab opens to that single recipe.
             <>
-              {/* <Link to={`/recipe/${the recipetitle}`}> */}
-              <Link to="/recipe/:ID">
+              <Link
+                to={`/recipe/${recipe.user.recipe.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Card
-                  key={recipe.rating}
-                  title={recipe.title}
-                  subTitle={`Posted by ${recipe.displayName}`}
+                  // ? currently using the recipe id which should be unique but I'm still getting an error about child in a list need unique key
+                  key={recipe.user.recipe.id}
+                  title={recipe.user.recipe.title}
+                  subTitle={`Posted by ${recipe.user.name}`}
                   style={{ width: '25rem', marginBottom: '2em' }}
                   className="p-component p-component--border "
                 >
                   <p className="p-m-0" style={{ lineHeight: '1.5' }}>
-                    Prep-time: {recipe.time}
+                    Prep-time: {recipe.user.recipe.prep_time_minutes}
                   </p>
 
                   <img
                     className="suggested-recipe__image"
                     src={foodPlaceHolder}
-                    alt={recipe.title}
+                    alt={recipe.user.recipe.title}
                   />
 
                   <div className="suggested-recipe__rating">
-                    <p>{recipe.rating}</p>
-                    <RatingStars rating={recipe.rating} />
+                    <p>{}</p>
+                    <RatingStars rating={recipe.reviews[0].rating} />
                   </div>
                 </Card>
               </Link>

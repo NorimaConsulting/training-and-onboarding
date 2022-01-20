@@ -3,39 +3,32 @@ import { useParams } from 'react-router-dom';
 import { Panel } from 'primereact/panel';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { v4 as uuidv4 } from 'uuid';
-import PlaceHolder from '../../assets/images/french-toast.jpg';
+import PlaceHolder from '../../assets/images/samosa.jpg';
 import { useQuery } from 'urql';
 import './Recipe.scss';
-
-// use template lit to replace hard coded ID take ID from url: ${ID} for recipe_by_pk
-const singleRecipeQuery = `{
-      recipe_by_pk(id: "89d27c71-151f-497f-b1af-5eef1ca4a5e0") {
-        title
-        instructions
-        ingredients
-        prep_time_minutes
-        user {
-          name
-        }
-        reviews_aggregate {
-          aggregate {
-            avg {
-              rating
-            }
-          }
-        }
-      }}
-    `;
 
 export default function Recipe() {
   //* retrive recipe ID from url path
   let { ID } = useParams();
-  console.log(ID);
-  const [selectedRecipe, setSelectedRecipe] = useState('');
 
-  useEffect(() => {
-    // TODO Make query to graphQL here, retrive the recipe with that title
-  });
+  const singleRecipeQuery = `{
+    recipe_by_pk(id: "${ID}") {
+      title
+      instructions
+      ingredients
+      prep_time_minutes
+      user {
+        name
+      }
+      reviews_aggregate {
+        aggregate {
+          avg {
+            rating
+          }
+        }
+      }
+    }}
+  `;
 
   const [result] = useQuery({
     query: singleRecipeQuery,
@@ -45,13 +38,13 @@ export default function Recipe() {
 
   if (fetching) return <p>Loading...</p>;
   if (error) return <p>Oh no...looks like there is an error {error.message}</p>;
-  let recipe = data.recipe_by_pk;
-  console.log(recipe);
+  const recipe = data.recipe_by_pk;
 
   return (
     <div className="recipe">
       <div className="recipe__title-wrapper">
         <h1 className="recipe__title recipe__title--dark">{recipe.title} </h1>
+        {/* // *In the future the Posted by should be a link that routes to the user profile/recipes posted */}
         <h2 className="recipe__title ">Posted By: {recipe.user.name} </h2>
       </div>
       <img src={PlaceHolder} alt="toast" className="recipe__img" />
@@ -68,10 +61,12 @@ export default function Recipe() {
         <SplitterPanel className="flex align-items-center recipe__panel--customize">
           <strong>Ingredients:</strong>
 
-          {recipe.ingredients.map((ingredient) => {
+          {recipe.ingredients.map((ingredient: object = {}) => {
             return (
               <ul>
-                <li key={ingredient} className="recipe__panel-list">
+                {/* // !using uuid libary to generate a unique key to resolve this error but hasn't been resolved.  */}
+
+                <li key={uuidv4()} className="recipe__panel-list">
                   {ingredient}
                 </li>
               </ul>
