@@ -5,23 +5,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.scss';
 /// TODO uncomment this out once DB is SetUp //
-// import { useQuery } from 'urql';
+import { useQuery } from 'urql';
 
-// const getRecipes = `
-// recipe {
-//   created_at
-//   user {
-//     recipe {
-//       prep_time_minutes
-//       title
-//     }
-//     name
-//   }
-//   reviews {
-//     rating
-//   }
-// }
-// `;
+const getRecipes = `{
+recipe {
+  created_at
+  user {
+    recipe {
+      prep_time_minutes
+      title
+    }
+    name
+  }
+  reviews {
+    rating
+  }
+}}
+`;
 
 // TODO recipe name, prep time, star rating, author/display name
 // * Not sure if this is useful but option an to get the avg rating number on the front end could be using:
@@ -70,23 +70,29 @@ const suggestedNum = 3;
 const firstOfRecipeLIst = placeholderREcipes.slice(0, suggestedNum);
 
 export default function HomePage() {
-  //   const [result] = useQuery({
-  //     query: getRecipes,
-  //   });
+  const [result] = useQuery({
+    query: getRecipes,
+  });
 
-  //   const { data, fetching, error } = result;
+  const { data, fetching, error } = result;
 
-  //   if (fetching) return <p>Loading...</p>;
-  //   if (error) return <p>Oh no... {error.message}</p>;
+  if (fetching) return <p>Loading...</p>;
+  if (error)
+    return (
+      <p>
+        Oh no...looks like there is an issue finding that recipe.{' '}
+        {error.message}
+      </p>
+    );
 
-  //   console.log(data.recipe)
-  //   console.log('username', data.recipe[0].user.name)
+  console.log(data);
+  console.log('username', data.recipe[0].user.name);
 
-  //   // Get 3 most recent recipes:
-  //   const mostRecent = 3;
-  // const mostRecentRecipeList = data.recipe.slice(0, mostRecent);
-  // console.log(mostRecentRecipeList)
-  // console.log('username', mostRecentRecipeList[0].user.name)
+  // Get 3 most recent recipes:
+  const mostRecent = 3;
+  const mostRecentRecipeList = data.recipe.slice(0, mostRecent);
+  console.log(mostRecentRecipeList);
+  console.log('username', mostRecentRecipeList[0].user.name);
   // * replace  line 103 firstOfREcipeLIst with mostRecentRecipeList and update objects
 
   return (

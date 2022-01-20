@@ -28,9 +28,13 @@
     margin: 3rem;
     filter: drop-shadow(0px 5px 2px $primary-dark);
   }
-  &__panel--background {
+  &__panel--customize {
+    flex-direction: column;
     background-color: $primary-light;
     border-top: 2px solid $primary-med-blue;
     padding: 1.5rem;
+  }
+  &__panel-list {
+    padding: 0.3rem;
   }
 }
