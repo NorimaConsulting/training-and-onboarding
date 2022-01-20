@@ -7,6 +7,9 @@ export default function NavBar() {
   return (
     <div className="nav-bar">
       <Link to="/" className="nav-bar__logo">
+        <h2>GR RECIPES</h2>
+      </Link>
+      <Link to="/recipe-list" className="nav-bar__link">
         <h2 className="nav-bar__text">GR RECIPES</h2>
       </Link>
       <Link to="/home" className="nav-bar__link">
@@ -27,7 +30,7 @@ export default function NavBar() {
         ></input>
       </div>{' '}
       {/* TODO For now this prop.user.name is hard coded until Auth/login is set up :-) */}
-      <UserDropDown user={{ name: 'Gorden' }} />
+      <UserDropDown />
       <Outlet />
     </div>
   );
