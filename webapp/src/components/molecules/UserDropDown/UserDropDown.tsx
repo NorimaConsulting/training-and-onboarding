@@ -20,12 +20,10 @@ export interface User {
 
 export default function UserDropDown(props: User) {
   const navigate = useNavigate();
-  const { isAuthenticated, logout, loginWithRedirect } = useAuth0();
+  const { isAuthenticated, logout, loginWithRedirect, user } = useAuth0();
   const navigateTo = (path: string) => {
     navigate(path);
   };
-
-  console.log(navigate, 'inside UserDropDown');
 
   const menu = useRef<TieredMenu>(null);
 
@@ -34,14 +32,9 @@ export default function UserDropDown(props: User) {
       label: 'Profile',
       icon: 'pi pi-user',
       command: () => {
-        navigateTo(`/profile/${props.user?.name}`);
+        navigateTo(`/profile/${user.nickname}`);
       },
     },
-    {
-      label: 'Create Account',
-      icon: 'pi pi-fw pi-user-edit',
-    },
-
     {
       separator: true,
     },

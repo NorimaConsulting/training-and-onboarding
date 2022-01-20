@@ -30,7 +30,7 @@ export default function NavBar() {
         ></input>
       </div>{' '}
       {/* TODO For now this prop.user.name is hard coded until Auth/login is set up :-) */}
-      <UserDropDown user={{ name: 'Gorden' }} />
+      <UserDropDown />
       <Outlet />
     </div>
   );
