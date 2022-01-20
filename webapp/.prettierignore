@@ -1,2 +1,4 @@
 # Ignore the purposefully bad file
 LintCheckTemplate.tsx
+
+src/resources/config/generated/

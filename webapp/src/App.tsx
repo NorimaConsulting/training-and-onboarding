@@ -9,6 +9,8 @@ import Recipe from './pages/Recipe';
 import RecipeList from './pages/RecipeList';
 import UserProfile from './pages/UserProfile/UserProfile';
 import ButtonArsh from './components/atoms/ButtonArsh';
+import UsersQuery from './components/atoms/UsersQuery';
+import { createClient, Provider } from 'urql';
 
 /**
  * This is the main App component. If this starts getting too big, remember to refactor and nest things!
@@ -30,6 +32,19 @@ const SoundEffectTWO = () => {
   );
 };
 
+const client = createClient({
+  url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT + '/v1/graphql',
+  fetchOptions: () => {
+    const token = import.meta.env.VITE_HASURA_GRAPHQL_ADMIN_SECRET;
+    return {
+      headers: {
+        'content-type': 'application/json',
+        'x-hasura-admin-secret': token,
+      },
+    };
+  },
+});
+
 function App() {
   return (
     <Auth0Provider
@@ -38,6 +53,7 @@ function App() {
       redirectUri={window.location.origin}
     >
       <div className="App">
+      <Provider value={client}>
         <MainScreen />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -54,8 +70,7 @@ function App() {
             <Route path=":displayName" element={<SoundEffectTWO />} />
             <Route
               path="/created_by/yellow-power-ranger/:displayName"
-              // eslint-disable-next-line indent
-              // eslint-disable-next-line indent
+             
               element={<SoundEffect />}
             ></Route>
           </Route>
@@ -73,8 +88,11 @@ function App() {
           />
           <Route path="/blackRanger" element={<CreatedBy />} />
           <Route path="/newbie" element={<ButtonArsh />} />
+          {/* Remove this route when not needed for testing query purposes */}
+          <Route path="/testQuery" element={<UsersQuery />} />
         </Routes>
-      </div>
+      </Provider>
+    </div>
     </Auth0Provider>
   );
 }
