@@ -22,7 +22,7 @@ export default function UserProfile() {
         shape="circle"
       />
       <h2>My Posted Recipes</h2>
-      //TODO add PrimeREact Recipe cards to map/display through users recipes.
+      //TODO add PrimeReact Recipe cards to map/display through users recipes.
     </div>
   );
 }
