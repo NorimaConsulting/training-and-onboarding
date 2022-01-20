@@ -42,7 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="home" element={<HomePage />} />
-          <Route path="recipe" element={<Recipe />} />
+          <Route path="recipe/:ID" element={<Recipe />} />
           <Route path="recipe-list" element={<RecipeList />} />
           <Route path="profile" element={<UserProfile />}>
             <Route path=":userName" element={<UserProfile />} />

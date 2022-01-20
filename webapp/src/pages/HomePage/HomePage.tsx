@@ -2,6 +2,7 @@ import { Card } from 'primereact/card';
 import foodPlaceHolder from '../../assets/images/pasta.jpg';
 import RatingStars from '../../components/molecules/RatingStars';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HomePage.scss';
 /// TODO uncomment this out once DB is SetUp //
 // import { useQuery } from 'urql';
@@ -104,27 +105,33 @@ export default function HomePage() {
           // * a better unique "key" prop for <Card/> might be the user id?
           return (
             // TODO: add function/props so when user clicks on recipe card a new tab opens to that single recipe.
-            <Card
-              key={recipe.rating}
-              title={recipe.title}
-              subTitle={`Posted by ${recipe.displayName}`}
-              style={{ width: '25rem', marginBottom: '2em' }}
-              className="p-component p-component--border "
-            >
-              <p className="p-m-0" style={{ lineHeight: '1.5' }}>
-                Prep-time: {recipe.time}
-              </p>
-              <img
-                className="suggested-recipe__image"
-                src={foodPlaceHolder}
-                alt={recipe.title}
-              />
+            <>
+              {/* <Link to={`/recipe/${the recipetitle}`}> */}
+              <Link to="/recipe/:ID">
+                <Card
+                  key={recipe.rating}
+                  title={recipe.title}
+                  subTitle={`Posted by ${recipe.displayName}`}
+                  style={{ width: '25rem', marginBottom: '2em' }}
+                  className="p-component p-component--border "
+                >
+                  <p className="p-m-0" style={{ lineHeight: '1.5' }}>
+                    Prep-time: {recipe.time}
+                  </p>
 
-              <div className="suggested-recipe__rating">
-                <p>{recipe.rating}</p>
-                <RatingStars rating={recipe.rating} />
-              </div>
-            </Card>
+                  <img
+                    className="suggested-recipe__image"
+                    src={foodPlaceHolder}
+                    alt={recipe.title}
+                  />
+
+                  <div className="suggested-recipe__rating">
+                    <p>{recipe.rating}</p>
+                    <RatingStars rating={recipe.rating} />
+                  </div>
+                </Card>
+              </Link>
+            </>
           );
         })}
       </div>
