@@ -86,7 +86,7 @@ export default function HomePage() {
                   />
 
                   <div className="suggested-recipe__rating">
-                    <p>{}</p>
+                    <p>{recipe.reviews[0].rating}</p>
                     <RatingStars rating={recipe.reviews[0].rating} />
                   </div>
                 </Card>
