@@ -6,7 +6,7 @@ import { Paginator } from 'primereact/paginator';
 
 const getAllRecipes = `
     query {
-        recipe(order_by: {created_at: asc}) {
+        recipe(order_by: {created_at: desc}) {
             bake_time_minutes
             cook_time_minutes
             created_at
@@ -56,7 +56,7 @@ export default function RecipeList() {
   return (
     // * Not the most DRY code right now but ideally we would iterate though the array of recipes to populate this page :-)
     <div className="recipe-list">
-      <h1>All Recipes:</h1>
+      <h1>All Recipes (from most recent):</h1>
       <div className="card_wrapper">
         <ul className="card_wrapper">
           {data.recipe.map((rec) => (
