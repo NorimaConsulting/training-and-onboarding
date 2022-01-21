@@ -2,3 +2,5 @@
 LintCheckTemplate.tsx
 
 src/resources/config/generated/
+
+codegen.js
