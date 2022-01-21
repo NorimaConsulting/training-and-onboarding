@@ -1,6 +1,6 @@
 version: 3
-endpoint: endpoint
-admin_secret: admin_secret
+endpoint: "https://winter-2022.hasura.app/v1/"
+admin_secret: "hZTWVhQ5a5pqIyPlwEQKHmNHcKaSLDPpjYToZZQa1C3qsSIDOELHROPH9l0Es11W"
 api_paths:
   v1_query: v1/query
   v2_query: v2/query

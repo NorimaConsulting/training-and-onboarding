@@ -9,6 +9,11 @@ import Recipe from './pages/Recipe';
 import RecipeList from './pages/RecipeList';
 import UserProfile from './pages/UserProfile/UserProfile';
 import ButtonArsh from './components/atoms/ButtonArsh';
+import {
+  ReactGraphqlUIContext,
+  PrimeReactDefaultComponents,
+} from '@tesseractcollective/react-graphql-ui';
+import HasuraConfig from './...../HasuraConfig.ts';
 
 /**
  * This is the main App component. If this starts getting too big, remember to refactor and nest things!
@@ -37,44 +42,56 @@ function App() {
       clientId="f0qoM6yhccCnMIHCjvlbSiQGQNWXc3Ii"
       redirectUri={window.location.origin}
     >
-      <div className="App">
-        <MainScreen />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="home" element={<HomePage />} />
-          <Route path="recipe" element={<Recipe />} />
-          <Route path="recipe-list" element={<RecipeList />} />
-          <Route path="profile" element={<UserProfile />}>
-            <Route path=":userName" element={<UserProfile />} />
-          </Route>
+      <ReactGraphqlUIContext.Provider
+        value={{
+          defaultComponents: {
+            flexFormComponents: {
+              ...PrimeReactDefaultComponents,
+              JsonbInput: JsonbInput,
+            },
+          },
+          configsMap: HasuraConfig,
+        }}
+      >
+        <div className="App">
+          <MainScreen />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="home" element={<HomePage />} />
+            <Route path="recipe" element={<Recipe />} />
+            <Route path="recipe-list" element={<RecipeList />} />
+            <Route path="profile" element={<UserProfile />}>
+              <Route path=":userName" element={<UserProfile />} />
+            </Route>
 
-          {/* Leave this route, but don't necessarily display it once you have real features. */}
-          <Route path="/created_by" element={<CreatedBy />}>
-            {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
-            <Route path=":displayName" element={<SoundEffectTWO />} />
+            {/* Leave this route, but don't necessarily display it once you have real features. */}
+            <Route path="/created_by" element={<CreatedBy />}>
+              {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
+              <Route path=":displayName" element={<SoundEffectTWO />} />
+              <Route
+                path="/created_by/yellow-power-ranger/:displayName"
+                // eslint-disable-next-line indent
+                // eslint-disable-next-line indent
+                element={<SoundEffect />}
+              ></Route>
+            </Route>
             <Route
-              path="/created_by/yellow-power-ranger/:displayName"
-              // eslint-disable-next-line indent
-              // eslint-disable-next-line indent
-              element={<SoundEffect />}
-            ></Route>
-          </Route>
-          <Route
-            path="*"
-            element={
-              <div>
-                <p>
-                  Sorry the page you&apos;re looking for isn&apos;t at this
-                  address 😥
-                </p>
-                <p>please double check the url!</p>
-              </div>
-            }
-          />
-          <Route path="/blackRanger" element={<CreatedBy />} />
-          <Route path="/newbie" element={<ButtonArsh />} />
-        </Routes>
-      </div>
+              path="*"
+              element={
+                <div>
+                  <p>
+                    Sorry the page you&apos;re looking for isn&apos;t at this
+                    address 😥
+                  </p>
+                  <p>please double check the url!</p>
+                </div>
+              }
+            />
+            <Route path="/blackRanger" element={<CreatedBy />} />
+            <Route path="/newbie" element={<ButtonArsh />} />
+          </Routes>
+        </div>
+      </ReactGraphqlUIContext.Provider>
     </Auth0Provider>
   );
 }
