@@ -1,4 +1,5 @@
 import React from 'react';
+import './ClickableImageCard.scss';
 import PlaceHolderImage from '../../../assets/images/french-toast.jpg';
 import { useNavigate } from 'react-router-dom';
 import { Card } from 'primereact/card';

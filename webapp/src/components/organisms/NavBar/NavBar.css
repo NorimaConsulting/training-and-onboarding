@@ -16,7 +16,7 @@
     rgba(29, 53, 87, 1) 100%
   );
   align-self: center;
-  padding: 0.5rem 2rem;
+  padding: 1.5rem 2.5rem;
 }
 
 .nav-bar__content {
@@ -50,14 +50,4 @@
 }
 .nav-bar__text {
   text-transform: uppercase;
-}
-
-.p-component {
-  background: rgb(168, 218, 220);
-  background: linear-gradient(
-    63deg,
-    rgba(168, 218, 220, 1) 0%,
-    rgba(69, 123, 157, 1) 69%,
-    rgba(29, 53, 87, 1) 100%
-  );
 }
