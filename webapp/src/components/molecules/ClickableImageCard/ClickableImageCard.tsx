@@ -3,38 +3,14 @@ import PlaceHolderImage from '../../../assets/images/french-toast.jpg';
 import { useNavigate } from 'react-router-dom';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
-import { useQuery } from 'urql';
 
-export interface recipeInformation {
-  recipe?: {
-    id: string;
-    title: string;
-    prepTime: number;
-    userName: string;
-    starRating: number;
+export interface routePath {
+  path?: {
+    pathName: string;
   };
 }
 
-export default function ClickableImageCard(props: recipeInformation) {
-  /* TODO: Remove this function if delete recipe via card functionality is not needed */
-  const DeleteRecipe = (event) => {
-    const deleteQuery = `
-      mutation {
-        delete_recipe(where: {id: {_eq: ${props.recipe?.id}}})
-      }
-    `;
-
-    const confirmDeletion = window.confirm(
-      'Are you sure you want to delete the recipe?'
-    );
-
-    if (confirmDeletion) {
-      useQuery({
-        query: deleteQuery,
-      });
-    }
-  };
-
+export default function ClickableImageCard(props: routePath) {
   const navigate = useNavigate();
 
   const header = <img alt="Card" src={PlaceHolderImage} />;
@@ -45,29 +21,25 @@ export default function ClickableImageCard(props: recipeInformation) {
         label="Delete"
         icon="pi pi-times"
         className="p-button-secondary p-ml-2"
-        onClick={(event) => DeleteRecipe(event)}
       />
     </span>
   );
 
   return (
-    <div onClick={() => navigate(`/recipe/${props.recipe?.id}`)}>
+    <div onClick={() => navigate(`/${props.path?.pathName}`)}>
       <Card
-        title={
-          props.recipe?.title === undefined || props.recipe.title === ''
-            ? 'No title'
-            : props.recipe.title
-        }
-        subTitle={`Posted by: ${props.recipe?.userName}`}
+        title="Recipe Title"
+        subTitle="Prep Time: 30mins"
         style={{ width: '25em' }}
         footer={footer}
         header={header}
       >
-        {/* TODO: Update this information with whatever is needed. 
-            Currently it shows recipe prep time and its average rating */}
+        {/* TODO  replace place holder Lorem ipsum text with  recipe description */}
         <p className="p-m-0" style={{ lineHeight: '1.5' }}>
-          Prep time: {props.recipe?.prepTime} minutes<br></br>
-          Average rating: {props.recipe?.starRating} stars
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+          sed consequuntur error repudiandae numquam deserunt quisquam repellat
+          libero asperiores earum nam nobis, culpa ratione quam perferendis
+          esse, cupiditate neque quas!
         </p>
       </Card>
     </div>
