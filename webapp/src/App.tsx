@@ -93,7 +93,7 @@ function App() {
             <Route path="/testQuery" element={<UsersQuery />} />
           </Routes>
         </Provider>
-        </div>
+      </div>
     </Auth0Provider>
   );
 }
