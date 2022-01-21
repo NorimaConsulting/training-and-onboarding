@@ -53,46 +53,45 @@ function App() {
       redirectUri={window.location.origin}
     >
       <div className="App">
-      <Provider value={client}>
-        <MainScreen />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="home" element={<HomePage />} />
-          <Route path="recipe/:ID" element={<Recipe />} />
-          <Route path="recipe-list" element={<RecipeList />} />
-          <Route path="profile" element={<UserProfile />}>
-            <Route path=":userName" element={<UserProfile />} />
-          </Route>
+        <Provider value={client}>
+          <MainScreen />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="home" element={<HomePage />} />
+            <Route path="recipe/:ID" element={<Recipe />} />
+            <Route path="recipe-list" element={<RecipeList />} />
+            <Route path="profile" element={<UserProfile />}>
+              <Route path=":userName" element={<UserProfile />} />
+            </Route>
 
-          {/* Leave this route, but don't necessarily display it once you have real features. */}
-          <Route path="/created_by" element={<CreatedBy />}>
-            {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
-            <Route path=":displayName" element={<SoundEffectTWO />} />
+            {/* Leave this route, but don't necessarily display it once you have real features. */}
+            <Route path="/created_by" element={<CreatedBy />}>
+              {/* Using the same element since it's handling both. Normally you'd probably have a separate one */}
+              <Route path=":displayName" element={<SoundEffectTWO />} />
+              <Route
+                path="/created_by/yellow-power-ranger/:displayName"
+                element={<SoundEffect />}
+              ></Route>
+            </Route>
             <Route
-              path="/created_by/yellow-power-ranger/:displayName"
-             
-              element={<SoundEffect />}
-            ></Route>
-          </Route>
-          <Route
-            path="*"
-            element={
-              <div>
-                <p>
-                  Sorry the page you&apos;re looking for isn&apos;t at this
-                  address 😥
-                </p>
-                <p>please double check the url!</p>
-              </div>
-            }
-          />
-          <Route path="/blackRanger" element={<CreatedBy />} />
-          <Route path="/newbie" element={<ButtonArsh />} />
-          {/* Remove this route when not needed for testing query purposes */}
-          <Route path="/testQuery" element={<UsersQuery />} />
-        </Routes>
-      </Provider>
-    </div>
+              path="*"
+              element={
+                <div>
+                  <p>
+                    Sorry the page you&apos;re looking for isn&apos;t at this
+                    address 😥
+                  </p>
+                  <p>please double check the url!</p>
+                </div>
+              }
+            />
+            <Route path="/blackRanger" element={<CreatedBy />} />
+            <Route path="/newbie" element={<ButtonArsh />} />
+            {/* Remove this route when not needed for testing query purposes */}
+            <Route path="/testQuery" element={<UsersQuery />} />
+          </Routes>
+        </Provider>
+      </div>
     </Auth0Provider>
   );
 }

@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Panel } from 'primereact/panel';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
-import { v4 as uuidv4 } from 'uuid';
+import RatingStars from '../../components/molecules/RatingStars';
 import PlaceHolder from '../../assets/images/samosa.jpg';
 import { useQuery } from 'urql';
 import './Recipe.scss';
+// * homemade uuid ^_^ since the libaray won't
+const uuid: number = Math.floor(Math.random() * 10000);
 
 export default function Recipe() {
   //* retrive recipe ID from url path
-  let { ID } = useParams();
+  const { ID } = useParams();
 
   const singleRecipeQuery = `{
     recipe_by_pk(id: "${ID}") {
@@ -40,6 +42,8 @@ export default function Recipe() {
   if (error) return <p>Oh no...looks like there is an error {error.message}</p>;
   const recipe = data.recipe_by_pk;
 
+  console.log(recipe);
+
   return (
     <div className="recipe">
       <div className="recipe__title-wrapper">
@@ -48,6 +52,7 @@ export default function Recipe() {
         <h2 className="recipe__title ">Posted By: {recipe.user.name} </h2>
       </div>
       <img src={PlaceHolder} alt="toast" className="recipe__img" />
+      <RatingStars rating={recipe.reviews} />
       <Panel header="Description">
         <p className="recipe__title recipe__panel-title">
           Prep Time: {recipe.prep_time_minutes} minutes{' '}
@@ -63,12 +68,8 @@ export default function Recipe() {
 
           {recipe.ingredients.map((ingredient: object = {}) => {
             return (
-              <ul>
-                {/* // !using uuid libary to generate a unique key to resolve this error but hasn't been resolved.  */}
-
-                <li key={uuidv4()} className="recipe__panel-list">
-                  {ingredient}
-                </li>
+              <ul key={uuid}>
+                <li className="recipe__panel-list">{ingredient}</li>
               </ul>
             );
           })}
