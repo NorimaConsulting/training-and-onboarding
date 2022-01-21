@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Panel } from 'primereact/panel';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
-import { v4 as uuidv4 } from 'uuid';
+// ? Not sure why this library can't be found even though when I console.log(uuidv4()) it works?
+// import { v4 as uuidv4 } from 'uuid';
 import PlaceHolder from '../../assets/images/samosa.jpg';
 import { useQuery } from 'urql';
 import './Recipe.scss';
+// * homemade uuid ^_^ since the libaray won't work!
+const uuid: number = Math.floor(Math.random() * 10000);
 
 export default function Recipe() {
   //* retrive recipe ID from url path
-  let { ID } = useParams();
+  const { ID } = useParams();
 
   const singleRecipeQuery = `{
     recipe_by_pk(id: "${ID}") {
@@ -63,12 +66,8 @@ export default function Recipe() {
 
           {recipe.ingredients.map((ingredient: object = {}) => {
             return (
-              <ul>
-                {/* // !using uuid libary to generate a unique key to resolve this error but hasn't been resolved.  */}
-
-                <li key={uuidv4()} className="recipe__panel-list">
-                  {ingredient}
-                </li>
+              <ul key={uuid}>
+                <li className="recipe__panel-list">{ingredient}</li>
               </ul>
             );
           })}
