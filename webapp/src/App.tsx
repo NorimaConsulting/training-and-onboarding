@@ -7,7 +7,7 @@ import CreatedBy from './pages/CreatedBy';
 import HomePage from './pages/HomePage';
 import Recipe from './pages/Recipe';
 import RecipeList from './pages/RecipeList';
-import UserProfile from './pages/UserProfile/UserProfile';
+import UserProfile from './pages/UserProfile';
 import ButtonArsh from './components/atoms/ButtonArsh';
 import UsersQuery from './components/atoms/UsersQuery';
 import { createClient, Provider } from 'urql';
@@ -59,6 +59,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="home" element={<HomePage />} />
             <Route path="recipe" element={<Recipe />} />
+            <Route path="recipe/:ID" element={<Recipe />} />
             <Route path="recipe-list" element={<RecipeList />} />
             <Route path="profile" element={<UserProfile />}>
               <Route path=":userName" element={<UserProfile />} />
@@ -70,7 +71,6 @@ function App() {
               <Route path=":displayName" element={<SoundEffectTWO />} />
               <Route
                 path="/created_by/yellow-power-ranger/:displayName"
-                // eslint-disable-next-line indent
                 // eslint-disable-next-line indent
                 element={<SoundEffect />}
               ></Route>

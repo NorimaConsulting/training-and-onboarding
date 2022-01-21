@@ -9,9 +9,6 @@ export default function NavBar() {
       <Link to="/" className="nav-bar__logo">
         <h2>GR RECIPES</h2>
       </Link>
-      <Link to="/recipe-list" className="nav-bar__link">
-        <h2 className="nav-bar__text">GR RECIPES</h2>
-      </Link>
       <Link to="/home" className="nav-bar__link">
         <h2>Home</h2>
       </Link>
