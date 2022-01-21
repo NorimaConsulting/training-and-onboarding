@@ -2,8 +2,9 @@
   color: #e63946;
   background-color: #a8dadc;
 }
-.card__wrapper {
+.card_wrapper {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   padding: 1rem 1rem 2rem;
 }
