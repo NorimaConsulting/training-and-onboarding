@@ -1,3 +1,5 @@
 .github/
 
 SetupChecks/
+
+src/resources/config/generated/
