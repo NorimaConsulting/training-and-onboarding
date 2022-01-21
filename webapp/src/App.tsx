@@ -31,7 +31,7 @@ const SoundEffectTWO = () => {
     </div>
   );
 };
-
+// ! I've looked into resolving the fethcOption type issue but can't seem to figure it out.
 const client = createClient({
   url: import.meta.env.VITE_HASURA_GRAPHQL_ENDPOINT + '/v1/graphql',
   fetchOptions: () => {

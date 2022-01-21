@@ -1,7 +1,6 @@
 import React from 'react';
 import './ClickableImageCard.scss';
 import PlaceHolderImage from '../../../assets/images/french-toast.jpg';
-import { useNavigate } from 'react-router-dom';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { useQuery } from 'urql';
@@ -18,7 +17,7 @@ export interface recipeInformation {
 
 export default function ClickableImageCard(props: recipeInformation) {
   /* TODO: Remove this function if delete recipe via card functionality is not needed */
-  const DeleteRecipe = (event) => {
+  const DeleteRecipe = (event: any) => {
     const deleteQuery = `
       mutation {
         delete_recipe(where: {id: {_eq: ${props.recipe?.id}}})
@@ -36,8 +35,6 @@ export default function ClickableImageCard(props: recipeInformation) {
     }
   };
 
-  const navigate = useNavigate();
-
   const header = <img alt="Card" src={PlaceHolderImage} />;
   const footer = (
     <span>
@@ -52,7 +49,8 @@ export default function ClickableImageCard(props: recipeInformation) {
   );
 
   return (
-    <div onClick={() => navigate(`/recipe/${props.recipe?.id}`)}>
+    // * changed navigate() to window.open to open a new tab
+    <div onClick={() => window.open(`/recipe/${props.recipe?.id}`)}>
       <Card
         title={
           props.recipe?.title === undefined || props.recipe.title === ''

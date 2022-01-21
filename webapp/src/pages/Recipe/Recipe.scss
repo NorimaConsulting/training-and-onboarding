@@ -23,11 +23,28 @@
     text-align: left;
     color: $primary-med-blue;
   }
+  &__hero-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 1rem;
+  }
+  &__image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: flex-end;
+    width: 50%;
+  }
+  &__img-rating {
+    padding: 1rem;
+  }
   &__img {
-    width: 30%;
-    margin: 3rem;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
     filter: drop-shadow(0px 5px 2px $primary-dark);
   }
+
   &__panel--customize {
     flex-direction: column;
     background-color: $primary-light;
@@ -38,4 +55,7 @@
   &__panel-list {
     padding: 0.3rem;
   }
+}
+.p-panel {
+  box-shadow: none;
 }

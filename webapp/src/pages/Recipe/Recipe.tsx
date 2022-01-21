@@ -2,13 +2,12 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Panel } from 'primereact/panel';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
-// ? Not sure why this library can't be found even though when I console.log(uuidv4()) it works?
-// import { v4 as uuidv4 } from 'uuid';
+import RatingStars from '../../components/molecules/RatingStars';
 import PlaceHolder from '../../assets/images/samosa.jpg';
 import { useQuery } from 'urql';
 import './Recipe.scss';
-// * homemade uuid ^_^ since the libaray won't work!
-const uuid: number = Math.floor(Math.random() * 10000);
+// * homemade uuid ^_^ since the libaray won't
+const uuid: number = Math.floor(Math.random() * 100000000);
 
 export default function Recipe() {
   //* retrive recipe ID from url path
@@ -50,16 +49,26 @@ export default function Recipe() {
         {/* // *In the future the Posted by should be a link that routes to the user profile/recipes posted */}
         <h2 className="recipe__title ">Posted By: {recipe.user.name} </h2>
       </div>
-      <img src={PlaceHolder} alt="toast" className="recipe__img" />
-      <Panel header="Description">
-        <p className="recipe__title recipe__panel-title">
-          Prep Time: {recipe.prep_time_minutes} minutes{' '}
-        </p>
-        <p className="recipe__title recipe__panel-title">
-          A recipe Description: Mouth watering recipe that is sure to become a
-          favouite!
-        </p>
-      </Panel>
+      <div className="recipe__hero-wrapper">
+        <div className="recipe__image-wrapper">
+          <img src={PlaceHolder} alt="toast" className="recipe__img" />
+          <p className="recipe__img-rating">
+            {recipe.reviews_aggregate.aggregate.avg.rating}
+          </p>
+          <RatingStars rating={recipe.reviews_aggregate.aggregate.avg.rating} />
+        </div>
+        <div className="recipe__description-wrapper">
+          <Panel header="Description">
+            <p className="recipe__title recipe__panel-title">
+              Prep Time: {recipe.prep_time_minutes} minutes{' '}
+            </p>
+            <p className="recipe__title recipe__panel-title">
+              A recipe Description: Mouth watering recipe that is sure to become
+              a favouite!
+            </p>
+          </Panel>
+        </div>
+      </div>
       <Splitter style={{ height: '300px' }} className="mb-5">
         <SplitterPanel className="flex align-items-center recipe__panel--customize">
           <strong>Ingredients:</strong>
