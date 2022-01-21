@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Recipe } from '../../resources/config/generated/resourceApi';
 import ClickableImageCard from '../../components/molecules/ClickableImageCard/index';
 import './RecipeList.css';
 import { useQuery } from 'urql';
-import { Paginator } from 'primereact/paginator';
 
 const getAllRecipes = `
     query {
@@ -36,15 +36,7 @@ const getAllRecipes = `
 `;
 
 export default function RecipeList() {
-  const [basicFirst, setBasicFirst] = useState(0);
-  const [basicRows, setBasicRows] = useState(2);
-
-  const onBasicPageChange = (event) => {
-    setBasicFirst(event.first);
-    setBasicRows(event.rows);
-  };
-
-  const [result] = useQuery({
+  const [result] = useQuery<{ recipe: Recipe[] }, any>({
     query: getAllRecipes,
   });
 
@@ -59,29 +51,25 @@ export default function RecipeList() {
       <h1>All Recipes (from most recent):</h1>
       <div className="card_wrapper">
         <ul className="card_wrapper">
-          {data.recipe.map((rec) => (
-            <li key={rec.id}>
-              <ClickableImageCard
-                key={rec.id}
-                recipe={{
-                  id: rec.id,
-                  title: rec.title,
-                  prepTime: rec.prep_time_minutes,
-                  userName: rec.user.name,
-                  starRating: rec.reviews_aggregate.aggregate.avg.rating,
-                }}
-              />
-            </li>
-          ))}
+          {data?.recipe.map((rec: any) => {
+            console.log(rec);
+            return (
+              <li key={rec.id}>
+                <ClickableImageCard
+                  key={rec.id}
+                  recipe={{
+                    id: rec.id,
+                    title: rec.title,
+                    prepTime: rec.prep_time_minutes,
+                    userName: rec.user.name,
+                    starRating: rec.reviews_aggregate.aggregate.avg.rating,
+                  }}
+                />
+              </li>
+            );
+          })}
         </ul>
       </div>
-      <Paginator
-        first={basicFirst}
-        rows={basicRows}
-        totalRecords={data.recipe.length}
-        rowsPerPageOptions={[2, 5]}
-        onPageChange={onBasicPageChange}
-      ></Paginator>
     </div>
   );
 }
