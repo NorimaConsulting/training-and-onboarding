@@ -8,9 +8,22 @@ export default function RecipeList() {
     <div className="recipe-list">
       <h1>Look at all those recipes!! </h1>
       <div className="card__wrapper">
-        <ClickableImageCard path={{ pathName: 'recipe' }} />
-        <ClickableImageCard path={{ pathName: 'recipe' }} />
-        <ClickableImageCard path={{ pathName: 'recipe' }} />
+        {/* // * currently hard coded Samosa Recipe id from Hasura */}
+        <ClickableImageCard
+          path={{
+            pathName: `recipe/${'89d27c71-151f-497f-b1af-5eef1ca4a5e0'}`,
+          }}
+        />
+        <ClickableImageCard
+          path={{
+            pathName: `recipe/${'89d27c71-151f-497f-b1af-5eef1ca4a5e0'}`,
+          }}
+        />
+        <ClickableImageCard
+          path={{
+            pathName: `recipe/${'89d27c71-151f-497f-b1af-5eef1ca4a5e0'}`,
+          }}
+        />
       </div>
     </div>
   );

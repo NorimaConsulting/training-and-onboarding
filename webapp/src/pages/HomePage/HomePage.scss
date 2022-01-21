@@ -1,0 +1,65 @@
+@use '../../partials/colors' as *;
+
+.homepage {
+  display: flex;
+  align-items: center;
+  background-image: url('../../assets/images/dish-back-ground-image.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: #457b9d;
+  height: 60vh;
+
+  &__welcome-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $primary-light;
+    opacity: 0.6;
+    width: 30rem;
+    height: 15rem;
+    margin: 1rem;
+    border: 1px solid $primary-med-blue;
+  }
+  &__header {
+    color: $primary-dark;
+    line-height: 3rem;
+    font-weight: 700;
+  }
+  &__header--left {
+    text-align: left;
+    margin: 1rem;
+  }
+  &__text {
+    color: $primary-dark;
+    line-height: 3rem;
+    font-weight: bold;
+  }
+}
+
+//TODO add this to the recipe scss component once created:focus
+.suggested-recipe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+  border-top: 4px solid $primary-dark;
+  border-bottom: 4px solid $primary-dark;
+  margin: 1rem;
+
+  &__image {
+    width: 35%;
+    margin: 1rem;
+  }
+  &__rating {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+}
+
+.p-card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}

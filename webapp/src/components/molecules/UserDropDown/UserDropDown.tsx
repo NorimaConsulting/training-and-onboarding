@@ -68,8 +68,7 @@ export default function UserDropDown(props: User) {
       />
       <Button
         icon="pi pi-user"
-        // !Looked into using null with TS and couldn't figure out a way to resolve this issue with menu,current/useRef(null)
-        onClick={(event) => menu?.current?.toggle(event)}
+        onClick={(event: React.MouseEvent) => menu.current?.toggle(event)}
         aria-haspopup
         aria-controls="overlay_tmenu"
       />
