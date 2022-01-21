@@ -42,8 +42,6 @@ export default function Recipe() {
   if (error) return <p>Oh no...looks like there is an error {error.message}</p>;
   const recipe = data.recipe_by_pk;
 
-  console.log(recipe);
-
   return (
     <div className="recipe">
       <div className="recipe__title-wrapper">

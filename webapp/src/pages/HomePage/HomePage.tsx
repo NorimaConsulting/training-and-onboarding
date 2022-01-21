@@ -18,14 +18,15 @@ const getRecipes = `{
       }
       name
     }
-    reviews {
-      rating
+    reviews_aggregate {
+      aggregate {
+        avg {
+          rating
+        }
+      }
     }
   }}
 `;
-
-// * Not sure if this is useful but option an to get the avg rating number on the front end could be using:
-// ? const avgRating = arrayOfNumbers => arrayOfNumbers.reduce((a,b) => a + b, 0) / arrayOfNumbers.length
 
 export default function HomePage() {
   const [result] = useQuery({
@@ -86,8 +87,10 @@ export default function HomePage() {
                   />
 
                   <div className="suggested-recipe__rating">
-                    <p>{recipe.reviews[0].rating}</p>
-                    <RatingStars rating={recipe.reviews[0].rating} />
+                    <p>{recipe.reviews_aggregate.aggregate.avg.rating}</p>
+                    <RatingStars
+                      rating={recipe.reviews_aggregate.aggregate.avg.rating}
+                    />
                   </div>
                 </Card>
               </Link>

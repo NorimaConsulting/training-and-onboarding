@@ -7,7 +7,7 @@ import CreatedBy from './pages/CreatedBy';
 import HomePage from './pages/HomePage';
 import Recipe from './pages/Recipe';
 import RecipeList from './pages/RecipeList';
-import UserProfile from './pages/UserProfile/UserProfile';
+import UserProfile from './pages/UserProfile';
 import ButtonArsh from './components/atoms/ButtonArsh';
 import UsersQuery from './components/atoms/UsersQuery';
 import { createClient, Provider } from 'urql';
