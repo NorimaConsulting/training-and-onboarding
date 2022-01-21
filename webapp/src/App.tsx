@@ -58,6 +58,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="home" element={<HomePage />} />
+            <Route path="recipe" element={<Recipe />} />
             <Route path="recipe/:ID" element={<Recipe />} />
             <Route path="recipe-list" element={<RecipeList />} />
             <Route path="profile" element={<UserProfile />}>
@@ -70,6 +71,7 @@ function App() {
               <Route path=":displayName" element={<SoundEffectTWO />} />
               <Route
                 path="/created_by/yellow-power-ranger/:displayName"
+                // eslint-disable-next-line indent
                 element={<SoundEffect />}
               ></Route>
             </Route>
@@ -81,7 +83,7 @@ function App() {
                     Sorry the page you&apos;re looking for isn&apos;t at this
                     address 😥
                   </p>
-                  <p>please double check the url!</p>
+                  <p>please double-check the url!</p>
                 </div>
               }
             />
