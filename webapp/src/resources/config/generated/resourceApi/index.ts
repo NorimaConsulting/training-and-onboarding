@@ -1,9 +1,15 @@
 import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>;
+};
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>;
+};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -140,24 +146,20 @@ export type Mutation_Root = {
   update_user_tags_by_pk?: Maybe<User_Tags>;
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_RecipeArgs = {
   where: Recipe_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Recipe_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_ReviewArgs = {
   where: Review_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Review_By_PkArgs = {
@@ -165,36 +167,30 @@ export type Mutation_RootDelete_Review_By_PkArgs = {
   reviewed_by: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Tag_EnumArgs = {
   where: Tag_Enum_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Tag_Enum_By_PkArgs = {
   name: Scalars['String'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_UserArgs = {
   where: User_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_User_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_User_TagsArgs = {
   where: User_Tags_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_User_Tags_By_PkArgs = {
@@ -202,13 +198,11 @@ export type Mutation_RootDelete_User_Tags_By_PkArgs = {
   user_id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_RecipeArgs = {
   objects: Array<Recipe_Insert_Input>;
   on_conflict?: InputMaybe<Recipe_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_Recipe_OneArgs = {
@@ -216,13 +210,11 @@ export type Mutation_RootInsert_Recipe_OneArgs = {
   on_conflict?: InputMaybe<Recipe_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_ReviewArgs = {
   objects: Array<Review_Insert_Input>;
   on_conflict?: InputMaybe<Review_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_Review_OneArgs = {
@@ -230,13 +222,11 @@ export type Mutation_RootInsert_Review_OneArgs = {
   on_conflict?: InputMaybe<Review_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Tag_EnumArgs = {
   objects: Array<Tag_Enum_Insert_Input>;
   on_conflict?: InputMaybe<Tag_Enum_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_Tag_Enum_OneArgs = {
@@ -244,13 +234,11 @@ export type Mutation_RootInsert_Tag_Enum_OneArgs = {
   on_conflict?: InputMaybe<Tag_Enum_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_UserArgs = {
   objects: Array<User_Insert_Input>;
   on_conflict?: InputMaybe<User_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_User_OneArgs = {
@@ -258,20 +246,17 @@ export type Mutation_RootInsert_User_OneArgs = {
   on_conflict?: InputMaybe<User_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_User_TagsArgs = {
   objects: Array<User_Tags_Insert_Input>;
   on_conflict?: InputMaybe<User_Tags_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_User_Tags_OneArgs = {
   object: User_Tags_Insert_Input;
   on_conflict?: InputMaybe<User_Tags_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_RecipeArgs = {
@@ -280,14 +265,12 @@ export type Mutation_RootUpdate_RecipeArgs = {
   where: Recipe_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Recipe_By_PkArgs = {
   _inc?: InputMaybe<Recipe_Inc_Input>;
   _set?: InputMaybe<Recipe_Set_Input>;
   pk_columns: Recipe_Pk_Columns_Input;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_ReviewArgs = {
@@ -296,7 +279,6 @@ export type Mutation_RootUpdate_ReviewArgs = {
   where: Review_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Review_By_PkArgs = {
   _inc?: InputMaybe<Review_Inc_Input>;
@@ -304,13 +286,11 @@ export type Mutation_RootUpdate_Review_By_PkArgs = {
   pk_columns: Review_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Tag_EnumArgs = {
   _set?: InputMaybe<Tag_Enum_Set_Input>;
   where: Tag_Enum_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Tag_Enum_By_PkArgs = {
@@ -318,13 +298,11 @@ export type Mutation_RootUpdate_Tag_Enum_By_PkArgs = {
   pk_columns: Tag_Enum_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_UserArgs = {
   _set?: InputMaybe<User_Set_Input>;
   where: User_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_User_By_PkArgs = {
@@ -332,13 +310,11 @@ export type Mutation_RootUpdate_User_By_PkArgs = {
   pk_columns: User_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_User_TagsArgs = {
   _set?: InputMaybe<User_Tags_Set_Input>;
   where: User_Tags_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_User_Tags_By_PkArgs = {
@@ -359,7 +335,7 @@ export enum Order_By {
   /** in descending order, nulls first */
   DescNullsFirst = 'desc_nulls_first',
   /** in descending order, nulls last */
-  DescNullsLast = 'desc_nulls_last'
+  DescNullsLast = 'desc_nulls_last',
 }
 
 export type Query_Root = {
@@ -396,7 +372,6 @@ export type Query_Root = {
   user_tags_by_pk?: Maybe<User_Tags>;
 };
 
-
 export type Query_RootRecipeArgs = {
   distinct_on?: InputMaybe<Array<Recipe_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -404,7 +379,6 @@ export type Query_RootRecipeArgs = {
   order_by?: InputMaybe<Array<Recipe_Order_By>>;
   where?: InputMaybe<Recipe_Bool_Exp>;
 };
-
 
 export type Query_RootRecipe_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Recipe_Select_Column>>;
@@ -414,11 +388,9 @@ export type Query_RootRecipe_AggregateArgs = {
   where?: InputMaybe<Recipe_Bool_Exp>;
 };
 
-
 export type Query_RootRecipe_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootReviewArgs = {
   distinct_on?: InputMaybe<Array<Review_Select_Column>>;
@@ -428,7 +400,6 @@ export type Query_RootReviewArgs = {
   where?: InputMaybe<Review_Bool_Exp>;
 };
 
-
 export type Query_RootReview_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Review_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -437,12 +408,10 @@ export type Query_RootReview_AggregateArgs = {
   where?: InputMaybe<Review_Bool_Exp>;
 };
 
-
 export type Query_RootReview_By_PkArgs = {
   recipe_id: Scalars['uuid'];
   reviewed_by: Scalars['uuid'];
 };
-
 
 export type Query_RootTag_EnumArgs = {
   distinct_on?: InputMaybe<Array<Tag_Enum_Select_Column>>;
@@ -452,7 +421,6 @@ export type Query_RootTag_EnumArgs = {
   where?: InputMaybe<Tag_Enum_Bool_Exp>;
 };
 
-
 export type Query_RootTag_Enum_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Tag_Enum_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -461,11 +429,9 @@ export type Query_RootTag_Enum_AggregateArgs = {
   where?: InputMaybe<Tag_Enum_Bool_Exp>;
 };
 
-
 export type Query_RootTag_Enum_By_PkArgs = {
   name: Scalars['String'];
 };
-
 
 export type Query_RootUserArgs = {
   distinct_on?: InputMaybe<Array<User_Select_Column>>;
@@ -475,7 +441,6 @@ export type Query_RootUserArgs = {
   where?: InputMaybe<User_Bool_Exp>;
 };
 
-
 export type Query_RootUser_AggregateArgs = {
   distinct_on?: InputMaybe<Array<User_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -484,11 +449,9 @@ export type Query_RootUser_AggregateArgs = {
   where?: InputMaybe<User_Bool_Exp>;
 };
 
-
 export type Query_RootUser_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootUser_TagsArgs = {
   distinct_on?: InputMaybe<Array<User_Tags_Select_Column>>;
@@ -498,7 +461,6 @@ export type Query_RootUser_TagsArgs = {
   where?: InputMaybe<User_Tags_Bool_Exp>;
 };
 
-
 export type Query_RootUser_Tags_AggregateArgs = {
   distinct_on?: InputMaybe<Array<User_Tags_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -506,7 +468,6 @@ export type Query_RootUser_Tags_AggregateArgs = {
   order_by?: InputMaybe<Array<User_Tags_Order_By>>;
   where?: InputMaybe<User_Tags_Bool_Exp>;
 };
-
 
 export type Query_RootUser_Tags_By_PkArgs = {
   recipe_id: Scalars['uuid'];
@@ -547,7 +508,6 @@ export type Recipe = {
   user_tags_aggregate: User_Tags_Aggregate;
 };
 
-
 /**
  * This table holds information about an individual recipe
  *
@@ -562,7 +522,6 @@ export type RecipeReviewsArgs = {
   order_by?: InputMaybe<Array<Review_Order_By>>;
   where?: InputMaybe<Review_Bool_Exp>;
 };
-
 
 /**
  * This table holds information about an individual recipe
@@ -579,7 +538,6 @@ export type RecipeReviews_AggregateArgs = {
   where?: InputMaybe<Review_Bool_Exp>;
 };
 
-
 /**
  * This table holds information about an individual recipe
  *
@@ -594,7 +552,6 @@ export type RecipeUser_TagsArgs = {
   order_by?: InputMaybe<Array<User_Tags_Order_By>>;
   where?: InputMaybe<User_Tags_Bool_Exp>;
 };
-
 
 /**
  * This table holds information about an individual recipe
@@ -633,7 +590,6 @@ export type Recipe_Aggregate_Fields = {
   var_samp?: Maybe<Recipe_Var_Samp_Fields>;
   variance?: Maybe<Recipe_Variance_Fields>;
 };
-
 
 /** aggregate fields of "recipe" */
 export type Recipe_Aggregate_FieldsCountArgs = {
@@ -675,7 +631,7 @@ export type Recipe_Bool_Exp = {
 /** unique or primary key constraints on table "recipe" */
 export enum Recipe_Constraint {
   /** unique or primary key constraint */
-  RecipePkey = 'recipe_pkey'
+  RecipePkey = 'recipe_pkey',
 }
 
 /** input type for incrementing numeric columns in table "recipe" */
@@ -812,7 +768,7 @@ export enum Recipe_Select_Column {
   /** column name */
   Title = 'title',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updated_at',
 }
 
 /** input type for updating data in table "recipe" */
@@ -891,7 +847,7 @@ export enum Recipe_Update_Column {
   /** column name */
   Title = 'title',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updated_at',
 }
 
 /** aggregate var_pop on columns */
@@ -960,7 +916,6 @@ export type Review_Aggregate_Fields = {
   variance?: Maybe<Review_Variance_Fields>;
 };
 
-
 /** aggregate fields of "review" */
 export type Review_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Review_Select_Column>>;
@@ -1016,7 +971,7 @@ export type Review_Bool_Exp = {
 /** unique or primary key constraints on table "review" */
 export enum Review_Constraint {
   /** unique or primary key constraint */
-  ReviewPkey = 'review_pkey'
+  ReviewPkey = 'review_pkey',
 }
 
 /** input type for incrementing numeric columns in table "review" */
@@ -1109,7 +1064,7 @@ export enum Review_Select_Column {
   /** column name */
   RecipeId = 'recipe_id',
   /** column name */
-  ReviewedBy = 'reviewed_by'
+  ReviewedBy = 'reviewed_by',
 }
 
 /** input type for updating data in table "review" */
@@ -1173,7 +1128,7 @@ export enum Review_Update_Column {
   /** column name */
   RecipeId = 'recipe_id',
   /** column name */
-  ReviewedBy = 'reviewed_by'
+  ReviewedBy = 'reviewed_by',
 }
 
 /** aggregate var_pop on columns */
@@ -1243,7 +1198,6 @@ export type Subscription_Root = {
   user_tags_by_pk?: Maybe<User_Tags>;
 };
 
-
 export type Subscription_RootRecipeArgs = {
   distinct_on?: InputMaybe<Array<Recipe_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1251,7 +1205,6 @@ export type Subscription_RootRecipeArgs = {
   order_by?: InputMaybe<Array<Recipe_Order_By>>;
   where?: InputMaybe<Recipe_Bool_Exp>;
 };
-
 
 export type Subscription_RootRecipe_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Recipe_Select_Column>>;
@@ -1261,11 +1214,9 @@ export type Subscription_RootRecipe_AggregateArgs = {
   where?: InputMaybe<Recipe_Bool_Exp>;
 };
 
-
 export type Subscription_RootRecipe_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootReviewArgs = {
   distinct_on?: InputMaybe<Array<Review_Select_Column>>;
@@ -1275,7 +1226,6 @@ export type Subscription_RootReviewArgs = {
   where?: InputMaybe<Review_Bool_Exp>;
 };
 
-
 export type Subscription_RootReview_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Review_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1284,12 +1234,10 @@ export type Subscription_RootReview_AggregateArgs = {
   where?: InputMaybe<Review_Bool_Exp>;
 };
 
-
 export type Subscription_RootReview_By_PkArgs = {
   recipe_id: Scalars['uuid'];
   reviewed_by: Scalars['uuid'];
 };
-
 
 export type Subscription_RootTag_EnumArgs = {
   distinct_on?: InputMaybe<Array<Tag_Enum_Select_Column>>;
@@ -1299,7 +1247,6 @@ export type Subscription_RootTag_EnumArgs = {
   where?: InputMaybe<Tag_Enum_Bool_Exp>;
 };
 
-
 export type Subscription_RootTag_Enum_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Tag_Enum_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1308,11 +1255,9 @@ export type Subscription_RootTag_Enum_AggregateArgs = {
   where?: InputMaybe<Tag_Enum_Bool_Exp>;
 };
 
-
 export type Subscription_RootTag_Enum_By_PkArgs = {
   name: Scalars['String'];
 };
-
 
 export type Subscription_RootUserArgs = {
   distinct_on?: InputMaybe<Array<User_Select_Column>>;
@@ -1322,7 +1267,6 @@ export type Subscription_RootUserArgs = {
   where?: InputMaybe<User_Bool_Exp>;
 };
 
-
 export type Subscription_RootUser_AggregateArgs = {
   distinct_on?: InputMaybe<Array<User_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1331,11 +1275,9 @@ export type Subscription_RootUser_AggregateArgs = {
   where?: InputMaybe<User_Bool_Exp>;
 };
 
-
 export type Subscription_RootUser_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootUser_TagsArgs = {
   distinct_on?: InputMaybe<Array<User_Tags_Select_Column>>;
@@ -1345,7 +1287,6 @@ export type Subscription_RootUser_TagsArgs = {
   where?: InputMaybe<User_Tags_Bool_Exp>;
 };
 
-
 export type Subscription_RootUser_Tags_AggregateArgs = {
   distinct_on?: InputMaybe<Array<User_Tags_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -1353,7 +1294,6 @@ export type Subscription_RootUser_Tags_AggregateArgs = {
   order_by?: InputMaybe<Array<User_Tags_Order_By>>;
   where?: InputMaybe<User_Tags_Bool_Exp>;
 };
-
 
 export type Subscription_RootUser_Tags_By_PkArgs = {
   recipe_id: Scalars['uuid'];
@@ -1377,7 +1317,6 @@ export type Tag_Enum = {
   user_tags_aggregate: User_Tags_Aggregate;
 };
 
-
 /**
  * enum table for the tags
  *
@@ -1392,7 +1331,6 @@ export type Tag_EnumUser_TagsArgs = {
   order_by?: InputMaybe<Array<User_Tags_Order_By>>;
   where?: InputMaybe<User_Tags_Bool_Exp>;
 };
-
 
 /**
  * enum table for the tags
@@ -1424,7 +1362,6 @@ export type Tag_Enum_Aggregate_Fields = {
   min?: Maybe<Tag_Enum_Min_Fields>;
 };
 
-
 /** aggregate fields of "tag_enum" */
 export type Tag_Enum_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Tag_Enum_Select_Column>>;
@@ -1444,12 +1381,12 @@ export type Tag_Enum_Bool_Exp = {
 /** unique or primary key constraints on table "tag_enum" */
 export enum Tag_Enum_Constraint {
   /** unique or primary key constraint */
-  TagEnumPkey = 'tag_enum_pkey'
+  TagEnumPkey = 'tag_enum_pkey',
 }
 
 export enum Tag_Enum_Enum {
   /** tastes delish */
-  Delish = 'Delish'
+  Delish = 'Delish',
 }
 
 /** Boolean expression to compare columns of type "tag_enum_enum". All fields are combined with logical 'AND'. */
@@ -1522,7 +1459,7 @@ export enum Tag_Enum_Select_Column {
   /** column name */
   Description = 'description',
   /** column name */
-  Name = 'name'
+  Name = 'name',
 }
 
 /** input type for updating data in table "tag_enum" */
@@ -1536,7 +1473,7 @@ export enum Tag_Enum_Update_Column {
   /** column name */
   Description = 'description',
   /** column name */
-  Name = 'name'
+  Name = 'name',
 }
 
 /** Boolean expression to compare columns of type "timestamptz". All fields are combined with logical 'AND'. */
@@ -1578,7 +1515,6 @@ export type User = {
   user_tags_aggregate: User_Tags_Aggregate;
 };
 
-
 /**
  * This table holds information about an individual user
  *
@@ -1593,7 +1529,6 @@ export type UserReviewsArgs = {
   order_by?: InputMaybe<Array<Review_Order_By>>;
   where?: InputMaybe<Review_Bool_Exp>;
 };
-
 
 /**
  * This table holds information about an individual user
@@ -1610,7 +1545,6 @@ export type UserReviews_AggregateArgs = {
   where?: InputMaybe<Review_Bool_Exp>;
 };
 
-
 /**
  * This table holds information about an individual user
  *
@@ -1625,7 +1559,6 @@ export type UserUser_TagsArgs = {
   order_by?: InputMaybe<Array<User_Tags_Order_By>>;
   where?: InputMaybe<User_Tags_Bool_Exp>;
 };
-
 
 /**
  * This table holds information about an individual user
@@ -1657,7 +1590,6 @@ export type User_Aggregate_Fields = {
   min?: Maybe<User_Min_Fields>;
 };
 
-
 /** aggregate fields of "user" */
 export type User_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<User_Select_Column>>;
@@ -1684,7 +1616,7 @@ export enum User_Constraint {
   /** unique or primary key constraint */
   UserEmailKey = 'user_email_key',
   /** unique or primary key constraint */
-  UserPkey = 'user_pkey'
+  UserPkey = 'user_pkey',
 }
 
 /** input type for inserting data into table "user" */
@@ -1770,7 +1702,7 @@ export enum User_Select_Column {
   /** column name */
   Name = 'name',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updated_at',
 }
 
 /** input type for updating data in table "user" */
@@ -1817,7 +1749,6 @@ export type User_Tags_Aggregate_Fields = {
   min?: Maybe<User_Tags_Min_Fields>;
 };
 
-
 /** aggregate fields of "user_tags" */
 export type User_Tags_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<User_Tags_Select_Column>>;
@@ -1854,7 +1785,7 @@ export type User_Tags_Bool_Exp = {
 /** unique or primary key constraints on table "user_tags" */
 export enum User_Tags_Constraint {
   /** unique or primary key constraint */
-  UserTagsPkey = 'user_tags_pkey'
+  UserTagsPkey = 'user_tags_pkey',
 }
 
 /** input type for inserting data into table "user_tags" */
@@ -1932,7 +1863,7 @@ export enum User_Tags_Select_Column {
   /** column name */
   Tag = 'tag',
   /** column name */
-  UserId = 'user_id'
+  UserId = 'user_id',
 }
 
 /** input type for updating data in table "user_tags" */
@@ -1949,7 +1880,7 @@ export enum User_Tags_Update_Column {
   /** column name */
   Tag = 'tag',
   /** column name */
-  UserId = 'user_id'
+  UserId = 'user_id',
 }
 
 /** update columns of table "user" */
@@ -1963,7 +1894,7 @@ export enum User_Update_Column {
   /** column name */
   Name = 'name',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updated_at',
 }
 
 /** Boolean expression to compare columns of type "uuid". All fields are combined with logical 'AND'. */
@@ -1978,3 +1909,31 @@ export type Uuid_Comparison_Exp = {
   _neq?: InputMaybe<Scalars['uuid']>;
   _nin?: InputMaybe<Array<Scalars['uuid']>>;
 };
+//* added this to set up flexform
+// * Example/ export type ClaimSubpartiesFieldsFragment = (
+//   { __typename?: 'claimSubparties' }
+//   & Pick<ClaimSubparties, 'subpartyId' | 'partyId' | 'type'>
+// );
+
+export type UserFieldsFragment = { __typename?: 'user' } & Pick<
+  User,
+  'id' | 'name' | 'email' | 'type'
+>;
+
+// * Example export const ClaimSubpartiesFieldsFragmentDoc = gql`
+//     fragment claimSubpartiesFields on claimSubparties {
+//   subpartyId
+//   partyId
+//   type
+// }
+//     `;
+
+export const UserFieldsFragmentDoc = gql`
+  fragment userFields on user {
+    id
+    name
+    email
+  }
+`;
+
+//
