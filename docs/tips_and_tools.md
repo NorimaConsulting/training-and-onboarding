@@ -2,7 +2,7 @@
 
 ## Tips for tech professionals 🧑‍💻
 
-- 🔢  Learn how Regular Expressions (regex) works 
+- 🔢 Learn how Regular Expressions (regex) works
 
   - You can use them in almost every language, with some variations
   - You can use them in VS Code's search box
@@ -10,11 +10,11 @@
   - Note: It's not a silver bullet and really shouldn't be used for some tasks. However it comes up often enough gaining comfort with them is very useful.
   - Note: Basically just learn little bits as you do other things as it's useful but not critical like learning JS
 
-- ✍️  Learn how to write Markdown 
+- ✍️ Learn how to write Markdown
 
   - It's used in READMEs, Github comments, almost everywhere a developer might start writing a comment!
   - You can disable the What You See Is What You Get (WYSIWYG) editor in Slack's preferences and use it manualy for example.
-  - Editors that use `pandoc` under the hood (VS Code has extensions)can convert markdown `.md` files into PDFs and even Word (`.docx`) files for you. 
+  - Editors that use `pandoc` under the hood (VS Code has extensions)can convert markdown `.md` files into PDFs and even Word (`.docx`) files for you.
     - So if someone every asks for a report imo it's your easiest way to write it fast and have it look half decent, with the tools you have already open!
 
 - Look up `awesome $tech` for curated lists on github.  
@@ -22,7 +22,7 @@
 
 - 🧑‍🎓 Learn your tools and work towards mastery!
 
-  - You can't do it all at once but I slowly work towards learning hotkeys and features in the tools I use. 
+  - You can't do it all at once but I slowly work towards learning hotkeys and features in the tools I use.
     - Everyone's brains are different and maybe you don't work well with hotkeys or are better with organizing notes or code in different ways. Find what works for you and lets you communicate well with others.
     - For instance VS Code's Release Notes often highlight useful new features.
     - I slowly look up features I hear about like jumping words with ctrl + arrows (or opt + arrows on mac) or using multiple cursors at once in VS Code
@@ -50,9 +50,8 @@ Dev tools you should install
 4. Node Package Managers
 
    1. Node comes with `npm` by default. However, most projects tend to prefer something like `yarn` or `pnpm` for various reasons. In most cases you can simply substitute one name for another. Notable execptions:
-      1.  `npm` uses `npm run $scriptname` while `yarn` and `pnpm` let you omit `run`
+      1. `npm` uses `npm run $scriptname` while `yarn` and `pnpm` let you omit `run`
       2. `npm` uses `npm install $library` both `yarn` and `pnpm` use `add` instead of `install` . Instead they reserve `install` for installing all the items in the `package.json`
-      3. 
 
 5. Windows Terminal
 
@@ -74,18 +73,18 @@ Dev tools you should install
 
       1. (personal preference) Install and enable[FiraCode](https://github.com/tonsky/FiraCode) font and ligature support (give you fancy arrows, etc)
 
-      ``` 
+      ```
       "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
       "editor.fontLigatures": true,
       ```
 
-      2.  Keep github happy by always including a final newline `"files.insertFinalNewline": true`
-      3.  Make it easy to see if you have mixed spaces and tabs or trailing whitespace `"editor.renderWhitespace": "all",`
-      4.  Make it easy to line up brackets `"editor.guides.bracketPairs": true,`
+      2. Keep github happy by always including a final newline `"files.insertFinalNewline": true`
+      3. Make it easy to see if you have mixed spaces and tabs or trailing whitespace `"editor.renderWhitespace": "all",`
+      4. Make it easy to line up brackets `"editor.guides.bracketPairs": true,`
 
    2. "Required" Extensions
 
-      1. [Live Share by Microsoft]( https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+      1. [Live Share by Microsoft](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
          - Allows for easier pair programming when working remotely.
       2. [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
          - Shows you git information right within your editor!
@@ -95,7 +94,7 @@ Dev tools you should install
       1. REST Client
       2. Sort JSON Objects
       3. [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
-           - Makes TODOs easy to find
+         - Makes TODOs easy to find
 
    4. Project-specific extensions:
 
@@ -104,3 +103,25 @@ Dev tools you should install
          1. Used a lot in JS projects
       3. Tailwind CSS IntelliSense
          1. adds intellisense support for tailwind classes (if your project is using that for styling)
+
+## :sparkles: Terminal Fun
+
+Good terminal skills are incredibly valuable as terminals are universal. Whether you need to patch a server or just write a quick script, your terminal is always there for you. So, why not become better friends?
+
+1. :rainbow: Customize your terminal!
+
+   1. Don't settle for plain git bash or powershell, try:
+      1. [fish](https://fishshell.com/) -- try customizing it further with [oh my fish](https://github.com/oh-my-fish/oh-my-fish) themes such as [bob the fish](https://github.com/oh-my-fish/theme-bobthefish)
+      2. [zsh](https://www.zsh.org/) and [oh my zsh](https://ohmyz.sh/)
+      3. [powershell core](https://github.com/PowerShell/PowerShell) combined with [oh my posh](https://ohmyposh.dev/)
+   2. Make `Vim` fun to use! All it takes is a `~/.vimrc` file.
+      1. [Introduction To Vim Customization](https://www.linode.com/docs/guides/introduction-to-vim-customization/)
+      2. [vim-plug](https://github.com/junegunn/vim-plug) -- plugins make Vim really powerful
+         1. [5 Must-Have Vim Plugins That Will Change Your Workflow](https://www.twilio.com/blog/5-must-have-vim-plugins-that-will-change-your-workflow)
+         2. [Markdown Preview for (Neo)vim](https://github.com/iamcco/markdown-preview.nvim)
+      3. [21 Best Vim Themes](https://www.dunebook.com/best-vim-themes/)
+
+2. Try tweaking your Powershell's `PROFILE` or Bash's `.bashrc` files. You can write your own terminal commands as functions! E.g. make a `note` command that opens your preferred editor and a file with today's date.
+3. Understand what the [PATH](http://www.linfo.org/path_env_var.html) environment variable is for.
+4. Practice using [command line git](https://www.learnenough.com/git-tutorial).
+5. Make `ssh` cleaner and easier by [saving hosts that you connect to frequently](https://linuxize.com/post/using-the-ssh-config-file/)
