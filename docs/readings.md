@@ -29,7 +29,12 @@ Foundational information on how the web works. Often not covered in coursework s
 - https://hasura.io/learn/graphql/hasura/introduction/
 	- Good tutorial for Hasura, but it kind of zips past the JS stuff.
 	- Also covers a bit of authentication
--  React JS
+-  React JS 
 	- Note: Ask James E and Ana about Pluralsight for React if these aren't great or if you can't find a good tutorial and want one.
 	  This section is tricky as I got into React late into my webdev career so I had difficulty picking a _good_ resource for this.
 	- A promising looking one, but it's paid at some point. If it's fantastic after you get through the free stuff let us know and we can look into paying for it. https://react-tutorial.app/
+  
+- Python :snake:
+  - [Real Python](https://realpython.com/) publishes detailed in-depth articles. Here are some recommended articles to checkout:
+    - [An Intro to Threading in Python](https://realpython.com/intro-to-python-threading/) -- it is important to know that threading in Python does not work as you would expect.
+    - [Async IO in Python: A Complete Walkthrough](https://realpython.com/async-io-python/)
