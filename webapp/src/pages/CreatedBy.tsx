@@ -2,8 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Signe from '../linterChecks/Signe';
 import James from '../linterChecks/James';
-import Akshay from '../linterChecks/Akshay';
+import Akshay from '../linterChecks/akshay';
 import Arsh from '../linterChecks/Arsh';
+import Patrick from '../linterChecks/patricky';
 
 // New Devs TODO:
 // - Copy `webapp/SetupChecks/LintCheckTemplate.tsx` into `webapp/src/linterChecks/$yourName.tsx`
@@ -23,6 +24,7 @@ export default function CreatedBy() {
       <Akshay developer={{ name: 'Akshay' }} />
       <Signe developer={{ name: 'Signe' }} />
       <Arsh developer={{ name: 'Arsh' }} />
+      <Patrick developer={{ name: 'Patrick' }} />
     </div>
   );
 }
