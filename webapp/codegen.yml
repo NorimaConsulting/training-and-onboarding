@@ -1,0 +1,11 @@
+schema: 'https://winter-2022.hasura.app/v1/graphql'
+documents: 'src/**/*.graphql'
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'urql-introspection'
+  ./graphql.schema.json:
+    plugins:
+      - 'introspection'

@@ -1,0 +1,14 @@
+@use '../../../partials//colors' as *;
+
+.p-component {
+  background: rgb(168, 218, 220);
+  background: linear-gradient(
+    59deg,
+    rgba(241, 250, 238, 1) 0%,
+    rgba(168, 218, 220, 1) 69%,
+    rgba(69, 123, 157, 1) 100%
+  );
+  &--border {
+    border: 0.1px solid rgba(230, 57, 70, 0.75);
+  }
+}

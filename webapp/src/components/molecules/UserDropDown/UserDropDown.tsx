@@ -1,0 +1,77 @@
+import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/mdc-light-indigo/theme.css';
+import 'primereact/resources/primereact.css';
+import 'primeflex/primeflex.css';
+import React, { useRef } from 'react';
+import { TieredMenu } from 'primereact/tieredmenu';
+import { Button } from 'primereact/button';
+import { useNavigate } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+
+export interface User {
+  user?: {
+    name: string;
+    email?: string;
+    avgRating?: string;
+    avatar?: string;
+    postedRecipes?: [];
+  };
+}
+
+export default function UserDropDown(props: User) {
+  const navigate = useNavigate();
+  const { isAuthenticated, logout, loginWithRedirect, user } = useAuth0();
+  const navigateTo = (path: string) => {
+    navigate(path);
+  };
+
+  const menu = useRef<TieredMenu>(null);
+
+  const items = [
+    {
+      label: 'Profile',
+      icon: 'pi pi-user',
+      command: () => {
+        navigateTo(`/profile/${user.nickname}`);
+      },
+    },
+    {
+      separator: true,
+    },
+    {
+      label: 'Sign out',
+      icon: 'pi pi-fw pi-power-off',
+      command: () => {
+        if (isAuthenticated) logout({ returnTo: window.location.origin });
+      },
+    },
+  ];
+
+  const unauthenticatedItems = [
+    {
+      label: 'Login/Signup',
+      icon: 'pi pi-fw pi-power-off',
+      command: () => {
+        if (!isAuthenticated)
+          loginWithRedirect({ returnTo: window.location.origin });
+      },
+    },
+  ];
+
+  return (
+    <div className="card">
+      <TieredMenu
+        model={isAuthenticated ? items : unauthenticatedItems}
+        popup
+        ref={menu}
+        id="overlay_tmenu"
+      />
+      <Button
+        icon="pi pi-user"
+        onClick={(event: React.MouseEvent) => menu.current?.toggle(event)}
+        aria-haspopup
+        aria-controls="overlay_tmenu"
+      />
+    </div>
+  );
+}
