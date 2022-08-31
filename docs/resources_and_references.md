@@ -140,3 +140,8 @@ WIP
 * Read up on Primary and Foreign Keys
   * These are used a lot in Hasura APIs
 * General knowledge of DBs is good to have especially if you have to start touching the back end.
+
+## Python :snake:
+
+* [Real Python](https://realpython.com/) is great resource for explanations about how Python works (free account required to read more than a few though)
+* Use [Pipenv](https://realpython.com/pipenv-guide/) to manage python environments and dependencies. 
