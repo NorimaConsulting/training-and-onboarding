@@ -9,6 +9,7 @@ import Recipe from './pages/Recipe';
 import RecipeList from './pages/RecipeList';
 import UserProfile from './pages/UserProfile';
 import ButtonArsh from './components/atoms/ButtonArsh';
+import ButtonSkaur from './components/atoms/ButtonSkaur/ButtonSkaur';
 import UsersQuery from './components/atoms/UsersQuery';
 import { createClient, Provider } from 'urql';
 
@@ -89,6 +90,8 @@ function App() {
             />
             <Route path="/blackRanger" element={<CreatedBy />} />
             <Route path="/newbie" element={<ButtonArsh />} />
+            <Route path="/created_by/Skaur" element={<CreatedBy />} />
+            <Route path="/sukhman" element={<ButtonSkaur />} />
             {/* Remove this route when not needed for testing query purposes */}
             <Route path="/testQuery" element={<UsersQuery />} />
           </Routes>

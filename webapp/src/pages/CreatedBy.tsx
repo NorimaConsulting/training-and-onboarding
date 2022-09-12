@@ -4,6 +4,7 @@ import Signe from '../linterChecks/Signe';
 import James from '../linterChecks/James';
 import Akshay from '../linterChecks/Akshay';
 import Arsh from '../linterChecks/Arsh';
+import Skaur from '../linterChecks/Skaur';
 
 // New Devs TODO:
 // - Copy `webapp/SetupChecks/LintCheckTemplate.tsx` into `webapp/src/linterChecks/$yourName.tsx`
@@ -23,6 +24,7 @@ export default function CreatedBy() {
       <Akshay developer={{ name: 'Akshay' }} />
       <Signe developer={{ name: 'Signe' }} />
       <Arsh developer={{ name: 'Arsh' }} />
+      <Skaur developer={{ name: 'Skaur' }} />
     </div>
   );
 }

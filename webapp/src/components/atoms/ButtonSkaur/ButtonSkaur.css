@@ -1,0 +1,15 @@
+.btnSkaur {
+  margin:auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 100px;
+  float:inline-start
+  }
+
+.btnSkaur button {
+  float:centre;
+  background-color:rgb(0, 255, 102);
+  border-style:ridge;
+  box-shadow: burlywood;
+  shape-outside: circle();
+}
