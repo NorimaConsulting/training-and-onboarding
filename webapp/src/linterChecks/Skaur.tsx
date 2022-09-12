@@ -28,7 +28,7 @@ export default function DeveloperName(props: DevProps) {
     <div className="devname-wrapper">
       <label>Name:</label>
       <span>
-        <Link to={`/sukhman`}>{props.developer?.name}</Link>
+        <Link to={'/sukhman'}>{props.developer?.name}</Link>
       </span>
     </div>
   );
