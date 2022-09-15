@@ -115,11 +115,17 @@ Good terminal skills are incredibly valuable as terminals are universal. Whether
       2. [zsh](https://www.zsh.org/) and [oh my zsh](https://ohmyz.sh/)
       3. [powershell core](https://github.com/PowerShell/PowerShell) combined with [oh my posh](https://ohmyposh.dev/)
    2. Make `Vim` fun to use! All it takes is a `~/.vimrc` file.
-      1. [Introduction To Vim Customization](https://www.linode.com/docs/guides/introduction-to-vim-customization/)
-      2. [vim-plug](https://github.com/junegunn/vim-plug) -- plugins make Vim really powerful
-         1. [5 Must-Have Vim Plugins That Will Change Your Workflow](https://www.twilio.com/blog/5-must-have-vim-plugins-that-will-change-your-workflow)
-         2. [Markdown Preview for (Neo)vim](https://github.com/iamcco/markdown-preview.nvim)
-      3. [21 Best Vim Themes](https://www.dunebook.com/best-vim-themes/)
+      1. Vim tutorials, reading doesn't work for everyone
+         2. [Vim Genuis](http://www.vimgenius.com/) shows you commands up front then has quizzes. Really lesson 1 and maybe 2 are all you need to get started! Using VS Code with this knowledge and the vim extension (while enabling standard hotkeys) is a great way to learn! This is my favourite.
+         3. https://vim-adventures.com/ is a game so you learn how to move around.
+            1. Their follow-up quiz is one of my favourites as it's golf score focused https://vim-adventures.com/quiz/ 
+         4. Finally I just heard about this https://www.openvim.com/ . I haven't really used it but it feels like an interactive textbook which may work well for you!
+      3. Customization and Plugins aka Ricing: Making Vim your own!
+         1. [Introduction To Vim Customization](https://www.linode.com/docs/guides/introduction-to-vim-customization/)
+         2. [vim-plug](https://github.com/junegunn/vim-plug) -- plugins make Vim really powerful
+         3. [5 Must-Have Vim Plugins That Will Change Your Workflow](https://www.twilio.com/blog/5-must-have-vim-plugins-that-will-change-your-workflow)
+         4. [Markdown Preview for (Neo)vim](https://github.com/iamcco/markdown-preview.nvim)
+         5. [21 Best Vim Themes](https://www.dunebook.com/best-vim-themes/)
 
 2. Try tweaking your Powershell's `PROFILE` or Bash's `.bashrc` files. You can write your own terminal commands as functions! E.g. make a `note` command that opens your preferred editor and a file with today's date.
 3. Understand what the [PATH](http://www.linfo.org/path_env_var.html) environment variable is for.
